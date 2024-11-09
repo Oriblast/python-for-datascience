@@ -1,0 +1,33 @@
+import pandas as pd 
+
+plt.figure(figsize=(10, 5))
+plt.plot(years, life_expectancy, marker='o')
+plt.title(f"Espérance de vie en {country}")
+plt.xlabel("Année")
+plt.ylabel("Espérance de vie (années)")
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Créer un graphique
+    plt.plot(annees, esperance_vie, label=f"Espérance de vie - {pays}")
+    
+    # Ajouter un titre et des légendes aux axes
+    plt.title(f"Évolution de l'espérance de vie - {pays}")
+    plt.xlabel("Année")
+    plt.ylabel("Espérance de vie")
+    
+    # Ajouter une légende
+    plt.legend()
+    
+    # Afficher le graphique
+    plt.xticks(rotation=45)  # Rotation des années pour une meilleure lisibilité
+    plt.tight_layout()  # Ajuster les marges pour éviter les chevauchements
+    plt.show()
+
+# Réduire le nombre de labels affichés sur l'axe X
+    plt.gca().xaxis.set_major_locator(plt.MaxNLocator(integer=True, prune='both'))
+    plt.xscale("log") : Applique une échelle logarithmique à l'axe des x. 
+    Cela est utile lorsque les données varient sur une large échelle, 
+    ce qui est souvent le cas pour les revenus nationaux par habitant.

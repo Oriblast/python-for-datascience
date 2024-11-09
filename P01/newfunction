@@ -1,0 +1,46 @@
+np of package numby
+
+pour la diffusion il suffit dappelr la fonction: 
+np.devide(number a diviser, diviseur)
+np.power(nombre a mettre a la puissance N, puissance N)
+
+all qui sera utiliser avec des fonction de control pour 
+verifier entierement des list et s'ecrit sous la forme: 
+
+all(isinstance(h, list) for h in height)
+le h prendra a chaque iteration la faleur de height
+np.array va convertir une liste en tableau
+parametre la liste 
+
+pour Convertir l'image en RGB (au cas ou elle ne serait pas deja dans ce format)
+img.convert('RGB') cette fonction retourne l'image en RGB
+
+les fonction de matploitlib.pyplot as plt
+plt.imshow(image)
+plt.titre(titre)
+plt.xlabel(x)
+plt.ylabel(y)
+plt.show() pour afficher le tout 
+
+algo raté 
+# Assumer que img_array est un tableau 2D ou 3D (si 3 canaux)
+    i = 0
+    j = 0
+    k = 0
+    img2 = 0
+    while(k < 400):
+        img2 = img_array[0][i]
+        img_array[k][i] = img_array[j][0]
+        img_array[j][k] = img2
+        i += 1
+        j += 1
+        if i == 400:
+            k += 1
+            i = k
+            j = k
+array.copy() copie le tableau
+
+pour anuler deux couleurs au profil dun autre il suffit de par exemple 
+red_colors[:, :, 1] = 0
+red_colors[:, :, 2] = 0
+sachant que dans [] 0 = r, 1 = g, 2 = blue
