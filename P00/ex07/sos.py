@@ -1,20 +1,20 @@
 import sys
 
 
-def morse_convertion(text: str) -> None:
+def morse_conversion(text: str) -> None:
     """
-    conversion normal langage in code morse
+    Convert normal language into Morse code.
     """
     MORSE = {
-    "A": ".- ", "B": "-... ", "C": "-.-. ", "D": "-.. ", "E": ". ", "F": "..-. ",
-    "G": "--. ", "H": ".... ", "I": ".. ", "J": ".--- ", "K": "-.- ", "L": ".-.. ",
-    "M": "-- ", "N": "-. ", "O": "--- ", "P": ".--. ", "Q": "--.- ", "R": ".-. ",
-    "S": "... ", "T": "- ", "U": "..- ", "V": "...- ", "W": ".-- ", "X": "-..- ",
-    "Y": "-.-- ", "Z": "--.. ",
-    "0": "----- ", "1": ".---- ", "2": "..--- ", "3": "...-- ", "4": "....- ",
-    "5": "..... ", "6": "-.... ", "7": "--... ", "8": "---.. ", "9": "----. ",
-    " ": "/ "
-}
+        "A": ".- ", "B": "-... ", "C": "-.-. ", "D": "-.. ", "E": ". ",
+        "F": "..-. ", "G": "--. ", "H": ".... ", "I": ".. ", "J": ".--- ",
+        "K": "-.- ", "L": ".-.. ", "M": "-- ", "N": "-. ", "O": "--- ",
+        "P": ".--. ", "Q": "--.- ", "R": ".-. ", "S": "... ", "T": "- ",
+        "U": "..- ", "V": "...- ", "W": ".-- ", "X": "-..- ", "Y": "-.-- ",
+        "Z": "--.. ", "0": "----- ", "1": ".---- ", "2": "..--- ",
+        "3": "...-- ", "4": "....- ", "5": "..... ", "6": "-.... ",
+        "7": "--... ", "8": "---.. ", "9": "----. ", " ": "/ "
+    }
 
     morse_code = ""
     for char in text:
@@ -22,14 +22,13 @@ def morse_convertion(text: str) -> None:
         if char in MORSE:
             morse_code += MORSE[char]
         else:
-            AssertionError("the arguments are bad")
+            raise AssertionError("The arguments are bad")
     morse_code = morse_code.rstrip()
-    print(morse_code, end="\n")
-    
-def main()-> None:
-    """ 
-    function principal
-    """
+    print(morse_code.rstrip(), end="\n")
+
+
+def main() -> None:
+    """function principal"""
 
     try:
         if len(sys.argv) != 2:
@@ -37,11 +36,10 @@ def main()-> None:
         text = sys.argv[1]
         if not isinstance(text, str):
             raise AssertionError("the arguments are bad")
-
-        morse_convertion(text)
+        morse_conversion(text)
     except AssertionError as e:
         print(f"AssertionError: {e}\n")
 
+
 if __name__ == "__main__":
     main()
-    

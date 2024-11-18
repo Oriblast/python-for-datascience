@@ -1,5 +1,6 @@
-import string 
+import string
 import sys
+
 
 def count_characters(text: str) -> dict:
     """
@@ -28,14 +29,11 @@ def count_characters(text: str) -> dict:
             counts["spaces"] += 1
         elif char.isdigit():
             counts["digits"] += 1
-    
     return counts
 
 
 def display_counts(counts: dict) -> None:
-    """
-    fonction display the counts of each characters 
-    """
+    """fonction display the counts of each characters"""
     print(f"The text contains {counts['total']} characters:")
     print(f"{counts['upper']} upper letters")
     print(f"{counts['lower']} lower letters")
@@ -44,17 +42,16 @@ def display_counts(counts: dict) -> None:
     print(f"{counts['digits']} digits")
 
 
-def main()-> None:
-    """
-    main fonction of the program. it hundles imput chexk erreur in call fonction 
-    """
+def main() -> None:
+    """main fonction of the program. it hundles imput
+chexk erreur in call fonction"""
     try:
 
         if len(sys.argv) == 1:
             text = input("what is the text to count?\n")
         elif len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")
-        else: 
+        else:
             text = sys.argv[1]
 
         display_counts(count_characters(text))

@@ -1,7 +1,5 @@
 def ft_filter(function, iterable):
-    """
-    construction of list filter
-    """
+    """construction of list filter"""
     if function is None:
         return [item for item in iterable if item]
     else:

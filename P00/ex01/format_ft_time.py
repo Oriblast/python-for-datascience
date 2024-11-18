@@ -3,12 +3,13 @@ import datetime
 
 #recuperer la date de l'epoque 
 
-epoch_time = time.time()
+e_time = time.time()
 
 #afficher ce temps en notation normal et scientifique
 
-print(f"Second since january 1, 1970: {epoch_time} or {epoch_time:.2e} in scientific notation", end="\n")
+print(f"Second since january 1, 1970: {e_time} or {e_time:.2e} in scientific notation", end="\n")
 
+#temps actuel 
 current_time = datetime.datetime.now()
 
 #formatage du temps actuel
