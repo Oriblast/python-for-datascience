@@ -9,323 +9,41 @@
 #: set amble_italic "fonts/amble/Italic.ttf"
 #: set radius_ dp(20)
 
-SignupPage:
+#: import home_interface home_interface
+#: import signup_page signup_page
+#: import login_page login_page
+#: import index_page index_page 
+#: import update_page update_page
+#: import imc imc
+#: import status status
 
-<HomeInterface>:
-    orientation:"vertical"
-    canvas.before:
-        Color:
-            rgb:hex(bleu)
-        Rectangle:
-            pos: self.pos
-            size: self.size
-    Label:
-        canvas.before:
-            Color:
-                rgba:0,0,0,0.75
-            Rectangle:
-                pos:self.pos
-                size:self.size
-        text:"Bienvenue dans votre IMC calculator"
-        size_hint:1, 0.1
-        font_size:extra
-        font_nome: acme
-    FloatLayout:
-        orientation:"horizontal"
-        Image:
-            source: "images/docteur_2.png"
-            pos_hint:{"x":0}
-            size_hint:0.5, 1
-        FloatLayout:
-            size_hint:None, None
-            size: dp(285), dp(275)
-            pos_hint:{"x": 0.6, "center_y":0.5}
-            canvas.before:
-                RoundedRectangle:
-                    pos:self.pos
-                    size:self.size
-                    radius: dp(20), dp(20) 
-            BoxLayout:
-                orientation:"vertical"
-                pos_hint:{"center_x":0.5, "center_y":0.5}
-                spacing:dp(40)
-                padding:dp(15), dp(55)
-                background_normal:"images/button_background.png"
-                Button:
-                    text:"Connexion"
-                    font_size:medium
-                    size_hint:0.9, 0.3
-                    background_normal:"images/button_background.png"
-                    #background_down:"images/button_background.png"
-                    pos_hint:{"center_x":0.5}
-                Button:
-                    text:"Inscription"
-                    font_size:medium
-                    font_name:amble_italic
-                    size_hint:0.9, 0.3
-                    background_normal:"images/button_background.png"
-                    #background_down:"images/button_background.png"
-                    pos_hint:{"center_x":0.5}
+<ScreenBrowser>:
+    Screen:
+        name:"home"
+        HomeInterface:
+    Screen:
+        name:"login"
+        LoginPage:
+        #on_press:root.transition.direction="left";root.current="ecranC"
+    Screen:
+        name:"index"
+        IndexPage:
+        #on_press:root.transition.direction="right";root.current="ecranA" #le premier paramettre permet de donné la direction
+    Screen:
+        name:"imc"
+        Imc:
+    Screen:
+        name:"signup"
+        SignupPage:
+        #on_press:root.transition.direction="left";root.current="ecranC"
+    Screen:
+        name:"status"
+        Status:
+        #on_press:root.transition.direction="right";root.current="ecranA" #le premier paramettre permet de donné la direction
+    Screen:
+        name:"update"
+        on_pre_enter:update_page.preload_data()
+        UpdatePage:
+            id:update_page
 
 
-<LoginPage>:
-    orientation:"vertical"
-    canvas.before:
-        Color:
-            rgb:hex(bleu)
-        Rectangle:
-            pos: self.pos
-            size: self.size
-    Label:
-        canvas.before:
-            Color:
-                rgba:0,0,0,0.75
-            Rectangle:
-                pos:self.pos
-                size:self.size
-        text:"Veillez vous connecter"
-        size_hint:1, 0.1
-        font_size:extra
-        font_nome: acme
-    FloatLayout:
-        orientation:"horizontal"
-        Image:
-            source: "images/docteur_2.png"
-            pos_hint:{"x":0}
-            size_hint:0.5, 1
-        FloatLayout:
-            size_hint:None, None
-            size: dp(285), dp(295)
-            pos_hint:{"x": 0.6, "center_y":0.5}
-            canvas.before:
-                RoundedRectangle:
-                    pos:self.pos
-                    size:self.size
-                    radius: dp(20), dp(20) 
-            BoxLayout:
-                orientation:"vertical"
-                pos_hint:{"center_x":0.5, "center_y":0.5}
-                spacing:dp(20)
-                padding:dp(10), dp(80)
-                background_normal:"images/button_background.png"
-                BoxLayout:
-                    #canvas.before: ca va mettre en evidence notre box avec une colorie 
-                     #   Color:
-                      #      rgb:0,1,0
-                       # Rectangle:
-                        #    size:self.size
-                         #   pos:self.pos
-                    orientation:"vertical"
-                    spacing:dp(10) #c'est pour avoir un espace entre mes co layout
-                    BoxLayout:
-                        orientation:"horizontal"
-                        Label:
-                            text:"pseudo"
-                            color:0,0,0
-                            font_size:medium
-                            font_nome: acme
-                            text_size:self.size
-                            halign:"left" #center right et left allignement horizont
-                            valign:"middle" #buttom middle et top alliment vertical
-                        TextInput:
-                            multiline:False
-                            size_hint:1, 1
-                            pos_hint:{"center_x":0.5}
-                            write_tab:False
-                BoxLayout:
-                    canvas.before:
-                        Color:
-                            rgb:0,1,0
-                        Rectangle:
-                            size:self.size
-                            pos:self.pos
-                    orientation:"vertical"
-                    BoxLayout:
-                        orientation:"horizontal"
-                        Label:
-                            text:"password"
-                            color:0,0,0
-                            font_size:medium
-                            font_nome: acme
-                            text_size:self.size
-                            halign:"left"
-                            valign:"middle"
-                        TextInput:
-                            multiline:False
-                            size_hint:1, 1
-                            pos_hint:{"center_x":0.5}
-                            write_tab:False
-                            password:True
-                            password_mask:"@" #permet de changer le * par un autre caractaire
-                Button:
-                    canvas.before:
-                        Color:
-                            rgb:1,0,0
-                        Rectangle:
-                            size:self.size
-                            pos:self.pos
-                    text:"Connexion"
-                    font_size:medium
-                    font_name:amble_italic
-                    size_hint:1, 1
-                    background_normal:"images/button_background.png"
-                    #background_down:"images/button_background.png"
-                    pos_hint:{"center_x":0.5}
-
-<SignupPage>:
-    orientation:"vertical"
-    canvas.before:
-        Color:
-            rgb: hex(bleu)
-        Rectangle:
-            pos:self.pos
-            size:self.size
-    Label:
-        canvas.before:
-            Color:
-                rgba: 0,0,0,0.75
-            Rectangle:
-                pos:self.pos
-                size:self.size
-        text:"creer un nouveau compte"
-        font_size:extra
-        font_name: acme
-        size_hint:1,0.1 #en pourcentage
-    FloatLayout:
-        orientation:"horizontal"
-        Image:
-            source:"images/docteur_2.png"
-            size_hint:0.5, 1
-            pos_hint: {"center_y":0.53}
-        FloatLayout:
-            orientation:"vertical"
-            canvas.before:
-                Color:
-                    rgb:hex(blanc)
-                RoundedRectangle:
-                    pos:self.pos
-                    size:self.size
-                    radius: radius_, radius_
-            size_hint:0.7, 0.7
-            pos_hint:{"center_x": 0.5, "center_y": 0.47}
-            BoxLayout:
-                orientation:"vertical"
-                pos_hint:{"center_x":0.5, "center_y":0.60}
-                spacing: dp(60)
-                padding: dp(10), dp(40)
-                BoxLayout:
-                    orientation:"horizontal"
-                    size_hint:0.5 ,0.08
-                    pos_hint:{"center_x":0.5, "y":0.5}
-                    Label:
-                        text:"pseudo"
-                        color:0,0,0
-                        font_size:medium
-                        font_name:amble_italic
-                        text_size:self.size
-                        valign:"middle"
-                        halign:"right"
-                    TextInput:
-                        id:pseudo
-                        hint_text:"Pseudo"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                BoxLayout:
-                    orientation:"horizontal"
-                    size_hint:1, 0.08
-                    spacing: dp(10)
-                    pos_hint:{"center_x":0.5, "top":0.85}
-                    TextInput:
-                        id:nom_prenom
-                        hint_text:"Nom & Prenom"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                    TextInput:
-                        id:age
-                        hint_text:"Age"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                    TextInput:
-                        id:sex
-                        hint_text:"Sex"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                    TextInput:
-                        id:travail
-                        hint_text:"Travail"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                BoxLayout:
-                    orientation:"horizontal"
-                    size_hint:1, 0.08
-                    spacing: dp(10)
-                    TextInput:
-                        id:taille
-                        hint_text:"Taille(cm)"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                    TextInput:
-                        id:poids
-                        hint_text:"Poids (kg)"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                BoxLayout:
-                    orientation:"horizontal"
-                    size_hint:1, 0.08
-                    spacing: dp(10)
-                    TextInput:
-                        id:password
-                        hint_text:"mot de passe"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                        password:True
-                    TextInput:
-                        id:passrep
-                        hint_text:"Répété le mot de passe"
-                        font_name:amble_regular
-                        text_size: self.size
-                        halign:'center'
-                        valign:"middle"
-                        multiline:False
-                        write_tab:False
-                        password:True
-                        password_mask:"@"
-            Button:
-                text:"Creer un compte"
-                background_normal:"images/button_background.png"
-                size_hint:0.4, 0.09
-                pos_hint:{"right":0.98, "y":0.04}
-                font_size:medium
-                font_name:acme

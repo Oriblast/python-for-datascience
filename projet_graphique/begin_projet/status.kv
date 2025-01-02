@@ -1,0 +1,54 @@
+<Status>:
+    FloatLayout:
+        orientation:"vertical"
+        BoxLayout:
+            orientation:"horizontal"
+            canvas.before:
+                Color:
+                    rgb: hex(bleu)
+                Rectangle:
+                    pos:self.pos
+                    size:self.size
+        FloatLayout:
+            Image:
+                source:"images/linda.png"
+                size_hint:0.4, 1
+                pos_hint: {"center_x":0.1,"center_y":0.5}
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                size_hint: 0.2, 0.1
+                pos_hint: {"center_x": 0.5, "center_y":0.95}
+                canvas.before:
+                    Color:
+                        rgba:0,0,0,0.75
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                text:"Etat de santé"
+                font_name: acme
+                font_size: medium
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                size_hint: 0.2, 0.1
+                pos_hint: {"center_x": 0.5, "center_y":0.75}
+                text:"Etat :"
+                font_name: acme
+                font_size: medium
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                size_hint: 0.3, 0.1
+                pos_hint: {"center_x": 0.5, "center_y":0.65}
+                text:"  Cause :"
+                font_name: acme
+                font_size: medium
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                size_hint: 0.2, 0.1
+                pos_hint: {"center_x": 0.5, "center_y":0.55}
+                text:"      Conseils :"
+                font_name: acme
+                font_size: medium

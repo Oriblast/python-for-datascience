@@ -1,0 +1,43 @@
+<Imc>:
+    orientation:"vertical"
+    canvas.before:
+        Color:
+            rgba: hex(bleu)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    Label:
+        canvas.before:
+            Color:
+                rgba:0,0,0,0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        text:"Votre IMC"
+        font_size:extra
+        font_name:acme
+        size_hint:1, 0.1
+
+    FloatLayout:
+        Image:
+            source:"images/linda.png"
+            size_hint: 0.5, 1
+        Label:
+            text:"Indice pondéral calculé en divisant\nle poids d'une personne par le carré\nde sa taillepour avoir sa corpulence et déterminé sa santé alimentaire."
+            font_name:amble_regular
+            font_size:medium
+            size_hint:0.5,0.5
+            text_size:self.size
+
+            pos_hint:{"center_x":0.6, "center_y":1}
+
+        BoxLayout:
+            orientation:"horizontal"
+            size_hint:0.4, 0.08
+            pos_hint:{"center_x":0.6, "center_y":0.5}
+            Label:
+                text:"IMC"
+                font_name:amble_regular
+                font_size:medium
+            TextInput:
+                readonly:True #empeche l'ecriture dans notre champs

@@ -1,0 +1,58 @@
+<IndexPage>:
+    orientation:"vertical"
+    canvas.before:
+        Color:
+            rgb:hex(bleu)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    Label:
+        canvas.before:
+            Color:
+                rgba:0,0,0,0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        text:"Bienvenue M."
+        font_name:acme
+        font_size:extra
+        size_hint: 1, 0.1
+    FloatLayout:
+        Image:
+            source:"images/linda.png"
+            size_hint: 0.5, 1
+        Label:
+            text:"je suis le docteur \nSolange kins"
+            font_name:acme
+            font_size:medium
+            pos_hint:{"center_x":0.5, "center_y":0.75}
+            valign:"middle"
+            haline:"center"
+        BoxLayout:
+            canvas.before:
+                RoundedRectangle:
+                    size:self.size
+                    pos:self.pos
+                    radius:radius_, radius_
+            orientation:"vertical"
+            size_hint:0.35, 0.65
+            pos_hint:{"right":0.99, "center_y":0.47}
+            padding:dp(15), dp(25)
+            spacing: dp(30)
+            Button:
+                text:"Modifier mes infos"
+                font_size: medium
+                font_name: amble_italic
+                background_normal:"images/button_background.png"
+                on_press:app.manage.current="update"
+            Button:
+                text:"Consulter mon imc"
+                font_size: medium
+                font_name: amble_italic
+                background_normal:"images/button_background.png"
+            Button:
+                text:"Etat de santé"
+                font_size: medium
+                font_name: amble_italic
+                background_normal:"images/button_background.png"
+            

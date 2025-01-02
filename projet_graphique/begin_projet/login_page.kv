@@ -1,0 +1,95 @@
+<LoginPage>:
+    orientation:"vertical"
+    canvas.before:
+        Color:
+            rgb:hex(bleu)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        canvas.before:
+            Color:
+                rgba:0,0,0,0.75
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        text:"Veillez vous connecter"
+        size_hint:1, 0.1
+        font_size:extra
+        font_nome: acme
+    FloatLayout:
+        orientation:"horizontal"
+        Image:
+            source: "images/docteur_2.png"
+            pos_hint:{"x":0}
+            size_hint:0.5, 1
+        FloatLayout:
+            size_hint:None, None
+            size: dp(285), dp(295)
+            pos_hint:{"x": 0.6, "center_y":0.5}
+            canvas.before:
+                RoundedRectangle:
+                    pos:self.pos
+                    size:self.size
+                    radius: dp(20), dp(20) 
+            BoxLayout:
+                orientation:"vertical"
+                pos_hint:{"center_x":0.5, "center_y":0.5}
+                spacing:dp(20)
+                padding:dp(10), dp(80)
+                background_normal:"images/button_background.png"
+                BoxLayout:
+                    #canvas.before: ca va mettre en evidence notre box avec une colorie 
+                     #   Color:
+                      #      rgb:0,1,0
+                       # Rectangle:
+                        #    size:self.size
+                         #   pos:self.pos
+                    orientation:"vertical"
+                    spacing:dp(10) #c'est pour avoir un espace entre mes co layout
+                    BoxLayout:
+                        orientation:"horizontal"
+                        Label:
+                            text:"pseudo"
+                            color:0,0,0
+                            font_size:medium
+                            font_nome: acme
+                            text_size:self.size
+                            halign:"left" #center right et left allignement horizont
+                            valign:"middle" #buttom middle et top alliment vertical
+                        TextInput:
+                            id:pseudo
+                            multiline:False
+                            size_hint:1, 1
+                            pos_hint:{"center_x":0.5}
+                            write_tab:False
+                BoxLayout:
+                    orientation:"vertical"
+                    BoxLayout:
+                        orientation:"horizontal"
+                        Label:
+                            text:"password"
+                            color:0,0,0
+                            font_size:medium
+                            font_nome: acme
+                            text_size:self.size
+                            halign:"left"
+                            valign:"middle"
+                        TextInput:
+                            id:password
+                            multiline:False
+                            size_hint:1, 1
+                            pos_hint:{"center_x":0.5}
+                            write_tab:False
+                            password:True
+                            password_mask:"@" #permet de changer le * par un autre caractaire
+                Button:
+                    text:"Connexion"
+                    font_size:medium
+                    font_name:amble_italic
+                    size_hint:1, 1
+                    background_normal:"images/button_background.png"
+                    #background_down:"images/button_background.png"
+                    pos_hint:{"center_x":0.5}
+                    on_press: app.manage.check_login(pseudo.text, password.text)
+
