@@ -16,7 +16,7 @@
         "3":{
             "id": 2, 
             "maladie":"surpoid", 
-            "reason": "Mauvaise alimentation", "conseil": "Consomm\u00e9 moins gras, Faite un peut de sport, pratqu\u00e9 le jeune intermittant"
+            "reason": "Mauvaise alimentation", "conseil": "Consomm\u00e9 \nmoins gras,Faite un peut de sport,\npratqu\u00e9 le jeune intermittant"
         }, 
         "4":{
             "id": 3, 
@@ -28,13 +28,13 @@
             "id": 4, 
             "maladie": "Obesit\u00e9 s\u00e9v\u00e8re", 
             "reason": "Mauvaise alimentation, manque d'activit\u00e9 physique", 
-            "conseil": "Consomm\u00e9 moins gras, Faite un peut de sport, pratiqu\u00e9 le jeune intermittant, demand\u00e9 un suivie par un nutritioniste"
+            "conseil": "Consomm\u00e9 moins gras, Faite un peut de sport,\npratiqu\u00e9 le jeune intermittant, \ndemand\u00e9 un suivie par un nutritioniste"
         }, 
         "6":{
             "id": 5, 
             "maladie": "Obesit\u00e9 morbide", 
             "reason": "Mauvaise alimentation, manque d'activit\u00e9 physique", 
-            "conseil": "Consomm\u00e9 moins gras, Faite un peut de sport, pratiqu\u00e9 le jeune intermittant, songez a une intervention bariatrique"
+            "conseil": "Consomm\u00e9 moins gras, Faite un peut de sport,\npratiqu\u00e9 le jeune intermittant,\nsongez a une intervention bariatrique"
         }
     }
 }

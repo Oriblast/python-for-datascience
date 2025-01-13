@@ -18,6 +18,12 @@
         font_size:extra
         size_hint: 1, 0.1
     FloatLayout:
+        Button:
+            text:"Se déconnecter"
+            on_press:root.logout()
+            size_hint: 0.2, 0.1
+            background_normal:"images/button_background.png"
+            pos_hint: {"center_x":0.93,"center_y":0.95}
         Image:
             source:"images/linda.png"
             size_hint: 0.5, 1
@@ -50,9 +56,11 @@
                 font_size: medium
                 font_name: amble_italic
                 background_normal:"images/button_background.png"
+                on_press:app.manage.current="imc"
             Button:
                 text:"Etat de santé"
                 font_size: medium
                 font_name: amble_italic
                 background_normal:"images/button_background.png"
+                on_press:app.manage.current="status"
             

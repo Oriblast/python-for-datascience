@@ -31,14 +31,19 @@
         #on_press:root.transition.direction="right";root.current="ecranA" #le premier paramettre permet de donné la direction
     Screen:
         name:"imc"
+        #id:imc
+        on_pre_enter:imc.preload_data()
         Imc:
+            id:imc
     Screen:
         name:"signup"
         SignupPage:
         #on_press:root.transition.direction="left";root.current="ecranC"
     Screen:
         name:"status"
+        on_pre_enter:status.preload_data()
         Status:
+            id:status
         #on_press:root.transition.direction="right";root.current="ecranA" #le premier paramettre permet de donné la direction
     Screen:
         name:"update"

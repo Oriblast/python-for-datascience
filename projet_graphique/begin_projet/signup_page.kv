@@ -19,6 +19,12 @@
         size_hint:1,0.1 #en pourcentage
     FloatLayout:
         orientation:"horizontal"
+        Button:
+            text:"<-BACK"
+            on_press: app.manage.current="home"
+            size_hint: 0.05, 0.04
+            background_normal:"images/button_background.png"
+            pos_hint: {"center_x":0.08,"center_y":0.97}
         Image:
             source:"images/docteur_2.png"
             size_hint:0.5, 1
@@ -157,4 +163,16 @@
                 pos_hint:{"right":0.98, "y":0.04}
                 font_size:medium
                 font_name:acme
-                on_press:app.manage.check_signup(pseudo.text, password.text, passrep.text, nom_prenom.text, age.text, sex.text, taille.text, poids.text, travail.text)
+                on_press:app.manage.check_signup(pseudo.text, password.text, passrep.text, nom_prenom.text, age.text, sex.text, taille.text, poids.text, travail.text); root.check_info(redflag)
+
+    Label:
+        canvas.before:
+            Color:
+                rgb:1,0,0
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        text:"error"
+        id:redflag
+        opacity:0
+        size_hint: 1, 0.03

@@ -21,7 +21,7 @@ class Session():
         {"mot_de_passe": "", "pseudo": 
         "*", "nom_prenom": "", 
         "age": None, "sex": None, "taille": None, "poids":
-        None, "travail": ""}}
+        None, "travail": ""}, "sante":{'imc':None, 'class_sante':None}}
         with open("./Data/session.json","w") as file:
             json.dump(data, file)
         pass

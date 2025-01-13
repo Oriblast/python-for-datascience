@@ -1,1 +1,1 @@
-{"status": true, "data": {"mot_de_passe": "secret", "pseudo": "rach", "nom_prenom": "rachide ELLAR", "age": 24, "sex": 0, "taille": 1.75, "poids": 64.0, "travail": "Developpeur Python"}, "msg": "Connexion Reussi"}
+{"status": true, "data": {"mot_de_passe": "$argon2id$v=19$m=65536,t=3,p=4$wcINVmu8UuQT2BvDk/WmzQ$j/FDEBqwLFslDuIQQbA6gazpVO/a+foANj+WHcS4J14", "pseudo": "ori", "nom_prenom": "blast", "age": 24, "sex": 1, "taille": 1.74, "poids": 62.0, "travail": "influenceur"}, "msg": "Connexion Reussi", "sante": {"imc": 20.48, "class_sante": 0}}

@@ -1,4 +1,5 @@
 from tinydb import TinyDB, Query
+from argon2 import PasswordHasher
 
 
 class Data:
@@ -47,26 +48,35 @@ class Data:
         return self.datas['imc']
     
     
-    def update(self):
+    def update(self, create:bool = False):
         db = TinyDB("./Data/datas.json")
         user = Query()
         if(len(db.search(user.user_data.pseudo == self.data['pseudo']))==0):
             db.insert(self.datas)
-            return
-        db.update(self.datas, user.user_data.pseudo==self.data['pseudo'])
+            return True
+        if not create:
+            db.update(self.datas, user.user_data.pseudo==self.data['pseudo'])
+        else :
+            return False
+        return True
         
     @classmethod
     def get_user(cls, pseudo, mdp):
+        pw = PasswordHasher()
         db = TinyDB("./Data/datas.json")
         user = Query()
         try:
             user=db.search(user.user_data.pseudo==pseudo)[0]
             data = user['user_data']
-            if data["mot_de_passe"] == mdp:
-                return {'status':True, 'data':data, 'msg':"Connexion Reussi"}
-            return {'status':False, 'data':{}, 'msg':"Utilisateur non trouvé"}
+            print(mdp)
+            print(data["mot_de_passe"])
+            if pw.verify(data["mot_de_passe"], mdp):
+                imc = user["imc"]
+                class_sante = user["sante"]
+                return {'status':True, 'data':data, 'msg':"Connexion Reussi", 'sante':{'imc':imc, 'class_sante':class_sante}}
+            return {'status':False, 'data':{}, 'msg':"Utilisateur non trouvé", "sante":{'imc':None, 'class_sante':None}}
         except:
-            return {'status':False, 'data':{}, 'msg':"Utilisateur non trouvé"}  
+            return {'status':False, 'data':{}, 'msg':"Utilisateure non trouvé", "sante":{'imc':None, 'class_sante':None}}  
 
 if __name__=="__main__":  
     print(Data.get_user("rach", "secret"))
