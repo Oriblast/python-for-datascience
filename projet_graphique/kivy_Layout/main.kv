@@ -1,0 +1,76 @@
+pageLay:
+
+<MainWidget>:
+    Switch:
+
+    Label:
+        text:"but"
+#le box lay de ce que je vois creer des bouttons ou objet defini automatiquement
+#de ce que je vois on peut egalement modifier les tailles mais il sont surtout 
+#defini en fonction de l'espace disponible sur le rendu ils prennent tout
+
+<boxLay>:
+    orientation:"vertical"
+    spacing:50
+    padding:20
+    Button:
+        text:"A"
+        size_hint:0.3, None #le pourcentage des dimmention en fonction de la resolution
+        #en ajoutant le none pour la hauteur on peut la fixé.
+        heigth:"50dp" # la on fixe la hauteur qui nest pas defini a cause du none
+        #pour centré mon bouton il suffit d'utilisé pos_hint
+        pos_hint:{"center_x":0.5, "center_y":0.5}#sache qu on peut utilisé x ou y
+        # au lieu d'utilisé center_x ou center_y qui sont utile pour centrer
+    Button:
+        text:"B"
+    Button:
+        text:"C"
+    Button:
+        text:"D"
+    Button:
+        text:"E"
+
+<floatLay@FloatLayout>:
+    Button:
+        text:"A"
+        
+    Button:
+        text:"B"
+    Button:
+        text:"C"
+        size_hint:0.3, None
+        heigth:"50dp"
+        pos_hint:{"rigth":0.5, "center_y":0.5}
+
+<anchorLay@AnchorLayout>: #il defini un box dans un autre
+    anchor_x:"left" #possibility: left center rigth
+    anchor_y:"bottom" #possibility: buttom center top
+    BoxLayout:
+        size_hint:0.3,0.3
+    #possibilité de modifier la possition du box avec les anchor grace a size_hint
+        Button:
+            text:"B"
+        Button:
+            text:"C"
+        Button:
+            text:"D"
+
+
+<gridLay@GridLayout>: #permet de def les bouttons sous forme de grille 
+# macols:.is faut choisir entre entre le mot clé cols et rows (ligne)
+    cols:2 #defini le nombre colonne 
+    rows:1 #defini le nombre de ligne
+#sache que comme plus haut tu peux redimentionné les buttons
+#ici il faut que les trucs sur le meme rows ait la meme taille pour
+#que les changement prennent 
+    Button:
+        text:"B"
+    Button:
+        text:"C"
+    Button:
+        text:"D"
+
+<pageLay@PageLayout>: #lui permet dde creer une page avec tout nos boutons ou objet 
+    MainWidget
+    boxLay
+    gridLay

@@ -11,10 +11,13 @@ def slice_me(family: list, start: int, end: int) -> list:
     :return: Sliced 2D list.
     """
 
-    if not isinstance(family, list) or not all(isinstance(row, list) for row in family):
+    if not isinstance(family, list) or not all(isinstance(
+        row, list
+    ) for row in family):
         raise TypeError("Input should be a list of lists.")
     
     row_length = len(family[0])
+    #la fonction all prend une condition et une boucle puis verifi
     if not all(len(row) == row_length for row in family):
         raise ValueError("All rows must have the same size.")
     

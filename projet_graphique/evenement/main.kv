@@ -1,0 +1,46 @@
+MainWidget:
+
+<MainWidget>:
+#le premier objet ici sera pour make notre back ground
+    canvas.before:
+        Color:
+            rgb: 50, 55, 0
+        Rectangle:
+            pos:self.pos
+            size: self.size
+
+    Switch:
+        id: switch
+        pos:(0, 200)
+    Slider:
+        id: slide
+        orientation:"vertical"
+        min:0
+        max:200
+        width:200
+        height:200
+        pos:(200 - 20 - 20, 40)
+        disabled: False if switch.active else True  
+
+    Label:
+        text: str(round(slide.value, 1))
+        pos:(300, 100)
+        font_size:70
+    
+    ProgressBar:
+        min:0
+        max:200
+        width:200
+        height:0
+        pos:(250, 30)
+        value: slide.value
+
+    Label:
+        text: text_.text
+        
+
+    TextInput:
+        id: text_
+        multiline: False
+        width: 200
+        height: 40
