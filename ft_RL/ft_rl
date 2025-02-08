@@ -1,0 +1,62 @@
+import numpy as np
+import pandas as pd
+import os
+import csv
+import matplotlib.pyplot as mlp
+
+def graphics(theta):
+    estimeData = pd.read_csv("ls_estimation.csv")
+    estimeKm = estimeData["km"]
+    estimePrice = estimeData["price"]
+
+    data = pd.read_csv("data.csv")
+    km = data["km"]
+    price = data["price"]
+
+    theta0 = theta['theta0'][0]
+    theta1 = theta['theta1'][0]
+
+    km_range = sorted(km)
+    price_line = [theta1 * x + theta0 for x in km_range]
+
+    mlp.scatter(km, price, color="blue", label="donnée réel")
+
+    mlp.scatter(estimeKm, estimePrice, color="darkturquoise", label="donnéé estimé")
+
+    mlp.plot(km_range, price_line, color='red', label="descente de gradient")
+
+    mlp.xlabel("mileage (km)")
+    mlp.ylabel("price")
+    mlp.title("linear regression")
+    mlp.legend()
+    mlp.grid()
+
+    mlp.show()
+
+
+def main():
+    """nice"""
+    if not os.path.exists("theta.csv"):
+        print("le programme est pas entrainé")
+        return
+    else:
+        theta = pd.read_csv("theta.csv")
+        theta0 = theta['theta0'][0]
+        theta1 = theta['theta1'][0]
+    nb = int(input("entrez le nombre de kilométrage de la voiture: "))
+    estimation = theta0 + theta1 * nb
+    print(f"\nestimation = {estimation}")
+
+    exist_file = os.path.exists('ls_estimation.csv')
+    if (theta1 != 0 or theta0 != 0):
+        with open('ls_estimation.csv', mode="a", newline='') as file:
+            writer = csv.writer(file)
+
+            if not exist_file:
+                writer.writerow(['km', 'price'])
+
+            writer.writerow([nb, estimation])
+
+
+if __name__ == "__main__":
+    main()

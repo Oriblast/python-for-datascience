@@ -1,0 +1,110 @@
+import numpy as np
+import pandas as pd
+import os
+import csv
+
+def make_theta():
+    with open('theta.csv', mode="w", newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['theta0', 'theta1', 'learning_rate'])
+        writer.writerow([0, 0, 0.03])
+
+def ecart(data) -> float:
+    """calcule de l'ecart type"""
+    ecart_t = 0
+    for i in range(len(data)):
+        ecart_t += (data['km'].iloc[i] - data['km'].mean()) ** 2
+    ecart_type = ((1 / (len(data) - 1)) * ecart_t) ** 0.5
+    return ecart_type
+    
+
+def train_AI() -> int:
+    """training of AI"""
+
+    
+    #fonction de train en chargant d'abord le csv de l'ecole 
+    if not os.path.exists("theta.csv"):
+        make_theta()
+
+    if os.path.exists("data.csv"):
+        data = pd.read_csv("data.csv")
+        print("data loading\n")
+        #pre calcul de sigma
+
+        price = data["price"].sum()
+        thetaData = pd.read_csv("theta.csv")
+
+        estimatePrice = 0
+        train = 1
+        if os.path.exists("ls_estimation.csv"):
+            estimeData = pd.read_csv("ls_estimation.csv")
+            estimatePrice = estimeData["price"].sum()
+        else:
+             estimatePrice = 0
+             estimeData = None
+
+        # 1 / 24 c'est 1 c'est 1/m apparament on doit utilisé toute les donnée de la data donc je ne fait pas varié m 
+        theta00 = thetaData["learning_rate"].iloc[0] * (1 / len(data)) * (estimatePrice - price)
+        theta0 = thetaData['theta0'].iloc[0] - theta00
+
+        total_error = 0
+        theta01 = 0
+        ecart_type = ecart(data)
+        if (estimatePrice != 0):
+            for i in range(len(data)): #utilisation de total error avec variable centré réduite
+                total_error += (estimeData["price"].iloc[i] - data["price"].iloc[i]) * (data["km"].iloc[i] - data["km"].mean()) / ecart_type
+        else: #c'est que forcément estimateprice n'existe pas car le modele est pas encore entrainé 
+            for i in range(len(data)):
+                total_error += (data["price"].iloc[i] *-1 ) * (data["km"].iloc[i] - data["km"].mean()) / ecart_type
+
+        theta01 = thetaData["learning_rate"].iloc[0] * (1 / len(data)) * total_error / 1000
+        theta1 = thetaData['theta1'].iloc[0] - theta01
+
+        #ici on met a jour notre theta csv
+        with open('theta.csv', mode="w", newline='') as file:
+            writer = csv.writer(file)
+
+            writer.writerow(['theta0', 'theta1', 'learning_rate'])
+            if thetaData['learning_rate'].iloc[0] == 0:
+                actu_rate = 0
+            else:
+                actu_rate = 0.00
+            writer.writerow([theta0, theta1, thetaData['learning_rate'].iloc[0] - actu_rate]) #on peut egalement mettre un tableau ou un dic a la place 
+
+        #mise a jour de ls estime pour avoir une liste d'estimation propostionnel a la liste data de lecole
+        with open('ls_estimation.csv', mode="w", newline='') as file:
+            writer = csv.writer(file)
+
+            writer.writerow(['km', 'price'])
+            for i in range(len(data)):
+                writer.writerow([data["km"].iloc[i], theta0 + (theta1 * data["km"].iloc[i])])
+
+        if (estimeData is not None):
+            if (estimeData["price"].mean() - data["price"].mean()) < 600 and (estimeData["price"].mean() - data["price"].mean()) > -600: 
+                print(f"train fini n\n")
+                train = 0
+                thetaData.loc[0, 'learning_rate'] = 0
+    else:
+        print("fichier data inexistant\n")
+        return 0 
+    return train   
+
+
+def main():
+    train = 1
+    choose = input("1 entrainement en boucle\n2 juste 3 séances\n")
+    choose = int(choose)
+    k = 0
+    i = 3
+    if choose == 1:
+        while (train):
+            train = train_AI()
+            k += 1
+    else:
+        while (i):
+            train_AI()
+            i -= 1
+    print(f"\nk = {k}")
+
+if __name__ == "__main__":
+    main()
