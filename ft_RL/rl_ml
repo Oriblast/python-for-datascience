@@ -55,6 +55,7 @@ def train_AI() -> int:
                 total_error += (estimeData["price"].iloc[i] - data["price"].iloc[i]) * (data["km"].iloc[i] - data["km"].mean()) / ecart_type
         else: #c'est que forcément estimateprice n'existe pas car le modele est pas encore entrainé 
             for i in range(len(data)):
+                #une partie de l'equation de de théta1 combiné a la methode la variable ceentré reduite 
                 total_error += (data["price"].iloc[i] *-1 ) * (data["km"].iloc[i] - data["km"].mean()) / ecart_type
 
         theta01 = thetaData["learning_rate"].iloc[0] * (1 / len(data)) * total_error / 1000

@@ -30,7 +30,7 @@ def mean(data):
             tab_mean += data[i]
     if (tab_mean > 0.0):
         tab_mean /= count(data)
-        return tab_mean
+        return round(tab_mean, 6)
     else:
         return float("nan")
 
@@ -44,7 +44,7 @@ def ecart(data) -> float:
         if isNumber(data[i]):
             ecart_type += (data[i] - mean(data)) ** 2
     if ecart_type > 0.0:
-        return ((1 / (count(data) - 1)) * ecart_type) ** 0.5
+        return round(((1 / (count(data) - 1)) * ecart_type) ** 0.5, 6)
 
 def std(data):
     """calcule de l'ecart type"""
@@ -57,13 +57,28 @@ def check_number(data):
             if isNumber(data[col][i]):
                 nbr[col] = data[col].copy()
                 break
-    return nbr
+    return pd.DataFrame(nbr)
 
+def min(data):
+    for i in range(len(data)):
+        for j in range(len(data)):
+            if data[i] < data[j]:
+                temp = data[i]
+                data[i] = data[j]
+                data[j] = temp
+
+
+def min_min(data):
+    return {col :ecart(data[col]) for col in data.columns}
+
+    
+    
 
 data_f = pd.read_csv("data.csv")
 
 data = check_number(data_f)
 
-d = std(pd.DataFrame(data))
+d = std(data)
+c = data.std()
 
-print(f"ecart = {d}")
+print(f"ecart = {d} \n {c}")
