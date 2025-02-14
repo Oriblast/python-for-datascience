@@ -80,7 +80,7 @@ def train_AI() -> int:
                 writer.writerow([data["km"].iloc[i], theta0 + (theta1 * data["km"].iloc[i])])
 
         if (estimeData is not None):
-            if (estimeData["price"].mean() - data["price"].mean()) < 600 and (estimeData["price"].mean() - data["price"].mean()) > -600: 
+            if (estimeData["price"].mean() - data["price"].mean()) < 10 and (estimeData["price"].mean() - data["price"].mean()) > -10: 
                 print(f"train fini n\n")
                 train = 0
                 thetaData.loc[0, 'learning_rate'] = 0

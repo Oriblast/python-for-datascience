@@ -16,12 +16,17 @@ def graphics(theta):
     theta0 = theta['theta0'][0]
     theta1 = theta['theta1'][0]
 
+    error = estimeData["price"].mean() - data["price"].mean()
+    price_mean = data["price"].mean()
+    print(f" l erreur moyenne est de {error}\n")
+    print(f"soit une précision d'environ {100 * (1 - (error / price_mean ))}%")
+
     km_range = sorted(km)
     price_line = [theta1 * x + theta0 for x in km_range]
 
     mlp.scatter(km, price, color="blue", label="donnée réel")
 
-    mlp.scatter(estimeKm, estimePrice, color="darkturquoise", label="donnéé estimé")
+    #mlp.scatter(estimeKm, estimePrice, color="darkturquoise", label="donnéé estimé")
 
     mlp.plot(km_range, price_line, color='red', label="descente de gradient")
 
@@ -29,7 +34,6 @@ def graphics(theta):
     mlp.ylabel("price")
     mlp.title("linear regression")
     mlp.legend()
-    mlp.grid()
 
     mlp.show()
 
@@ -48,7 +52,7 @@ def main():
     print(f"\nestimation = {estimation}")
 
     exist_file = os.path.exists('ls_estimation.csv')
-    if (theta1 != 0 or theta0 != 0):
+    if (theta1 != 0 or theta0 != 0 or theta["learning_rate"][0] != 0.03):
         with open('ls_estimation.csv', mode="a", newline='') as file:
             writer = csv.writer(file)
 
@@ -56,6 +60,7 @@ def main():
                 writer.writerow(['km', 'price'])
 
             writer.writerow([nb, estimation])
+    graphics(theta)
 
 
 if __name__ == "__main__":

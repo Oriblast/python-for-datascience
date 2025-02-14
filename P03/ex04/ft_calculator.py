@@ -9,7 +9,7 @@ Produit scalaire=
 i=0
 ∑
 n
-V1[i]*V2[i] pour v[1,2,3] et v1 [5, 6 , 7] sca = 1 * 5 + 2 * 6 + 3 * 7"""
+V1.iloc[i]*V2.iloc[i] pour v[1,2,3] et v1 [5, 6 , 7] sca = 1 * 5 + 2 * 6 + 3 * 7"""
 
         dot_prod = 0.0
         for i in V1:
