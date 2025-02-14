@@ -41,7 +41,7 @@ def graphics(theta):
 def main():
     """nice"""
     if not os.path.exists("theta.csv"):
-        print("le programme est pas entrainé")
+        print("le programme est pas entrainé le résultat sera zero car 0-0*X = 0")
         return
     else:
         theta = pd.read_csv("theta.csv")
