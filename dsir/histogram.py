@@ -22,7 +22,8 @@ def recovery_dfByStr(data, s1: str, s2: str):
 def my_home(data, s1:str, s2:str,i:int):
     d_Ravenclaw = recovery_dfByStr(data, s1, s2)
     Ravenclaw = check_number(d_Ravenclaw)
-    mean_raven = {i: std(Ravenclaw)}
+    print(Ravenclaw)
+    mean_raven = {i: mean_data(Ravenclaw)}
     mean_raven = pd.DataFrame(mean_raven).T
     mean_raven = mean_raven.drop(columns = ["Index"])
     print(mean_raven)

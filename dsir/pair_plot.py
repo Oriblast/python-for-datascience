@@ -23,6 +23,7 @@ num_data = check_number(num_data)
 
 # Trouver les caractéristiques les moins corrélées
 corr_matrix = num_data.corr()
+print(corr_matrix)
 corr_matrix_unstacked = corr_matrix.unstack()
 corr_matrix_unstacked = corr_matrix_unstacked[corr_matrix_unstacked != 1]  # Exclure la diagonale
 least_correlated = corr_matrix_unstacked.abs().idxmin()  # Indices de la plus petite corrélation
