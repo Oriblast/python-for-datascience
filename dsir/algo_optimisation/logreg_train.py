@@ -26,6 +26,8 @@ def maj_b(b2, feature, y2, set_name, l):
     w = [0] * len(y2)
     """il s'agit de la dérivé de j sur w et b"""
     for i in range(len(y2)):
+        if (l >= len(feature)):
+            break
         if (y2[i] == 555):
             break
         if (feature["set"][l] == set_name):
@@ -44,6 +46,8 @@ def maj_w(w2, feature, y2, set_name, a, l):
         if j != "set":
             w.loc[0,j] = 0
             for i in range(len(y2)):
+                if l >= len(feature):
+                    break
                 if y2[i] == 555:
                     break
                 if (feature["set"][l] == set_name):
@@ -64,13 +68,15 @@ def sigmoïde(feature, w, b, set_name, b2):
     y3 = [0] * 17
     for i in feature.columns:
         if i != s1:
+            mini = 0
             for j in range(len(feature)):
                 z[j] = feature[i][j] * w[i][0] + b
                 y2[j] = 1 / (1 + math.exp(-z[j]))
                 y3[mini] = y2[j]
                 mini += 1
                 if mini == mini_batch or j + 1 == len(feature):
-                    y3[mini+1] = 555 
+                    y3[mini] = 555 
+                    mini -= 1
                     maj_b(b2, feature, y3[:mini], set_name, j - mini)
                     maj_w(w, feature, y3[:mini], set_name, b2["a"][0], j - mini)
                     mini = 0
