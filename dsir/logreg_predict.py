@@ -4,6 +4,7 @@ import pandas as pd
 import os 
 import math
 import csv
+import sys
 from sklearn.metrics import accuracy_score
 from logreg_train import *
 
@@ -47,7 +48,11 @@ def check_nan(data):
 
 def main():
     """programme de prédiction"""
-    data = pd.read_csv("dataset_train.csv")
+    if (len(sys.argv) != 2):
+        print("pas d'arguments")
+        return
+    data = pd.read_csv(sys.argv[1])
+
     c_biais = pd.read_csv("Ravenclaw_biais.csv")
     c_feat = pd.read_csv("Ravenclaw_featureW.csv")
     s_biais = pd.read_csv("Slytherin_biais.csv")
@@ -153,11 +158,11 @@ def main():
             elif var == 4:
                 writer.writerow([i, "Hufflepuff"])
                 ls[i] = "Hufflepuff"
-    ls_r = data["Hogwarts House"].tolist()
+    """ls_r = data["Hogwarts House"].tolist()
     accuracy = accuracy_score(ls_r, ls)
     print(f'Accuracy du modèle : {accuracy:.2f}')
     print(ls_r)
-    print(ls)
+    print(ls)"""
 
 
 if __name__ == "__main__":

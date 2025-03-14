@@ -4,6 +4,7 @@ import pandas as pd
 import os 
 import math
 import csv
+import sys
 s1 = "set"
 
 
@@ -131,10 +132,13 @@ def check_nan(data):
 
 def main ():
     """initialisation"""
-    if not os.path.exists("dataset_train.csv"):
+    """if not os.path.exists("dataset_train.csv"):
         print("fichier d'entrainement inexistant. File : dataset_train.csv")
+        return"""
+    if (len(sys.argv) != 2):
+        print("pas d'arguments")
         return
-    data = pd.read_csv("dataset_train.csv")
+    data = pd.read_csv(sys.argv[1])
 
     for i in data.columns:
         if i == "Astronomy" or i == "Care of Magical Creatures" or i == "Ancient Runes" or i == "Herbology" or i == "Muggle Studies" or i == "Divination" or i == "Flying" or i == "Charms" or i == "Defense Against the Dark Arts" or i == "Transfiguration" or i == "Potions":

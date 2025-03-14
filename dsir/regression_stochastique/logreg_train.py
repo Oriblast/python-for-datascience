@@ -4,6 +4,7 @@ import pandas as pd
 import os 
 import math
 import csv
+import sys
 s1 = "set"
 
 
@@ -136,7 +137,7 @@ def main ():
         #if i != "Hogwarts House":
             #check_nb_str(data[i])
             for j in range(len(data)):
-                data.loc[j, i] /= 100
+                data.loc[j, i] /= 10000
     feat1 = {
         "set" : data["Hogwarts House"],
         "Astronomy": data["Astronomy"],
@@ -192,31 +193,30 @@ def main ():
     feature4 = check_nan(feat4)
     j = 0
     i = 1000
-
     while j != 1:
         j = rLogistic_train(feature1, "Ravenclaw")
-        if i == j or round(i, 8) == round(j, 8):
+        if i == j or round(i, 4) == round(j, 4):
             j = 1
         i = j
     j = 0
     i = 1000
     while  j != 1:
         j = rLogistic_train(feature2, "Slytherin")
-        if i == j or round(i, 6) == round(j, 6):
+        if i == j or round(i, 4) == round(j, 4):
             j = 1
         i = j
     j = 0
     i = 1000
     while j != 1:
         j = rLogistic_train(feature3, "Gryffindor")
-        if i == j or round(i, 8) == round(j, 8):
+        if i == j or round(i, 4) == round(j, 4):
             j = 1
         i = j
     j = 0
     i = 1000
     while j != 1:
         j = rLogistic_train(feature4, "Hufflepuff")
-        if i == j or round(i, 8) == round(j, 8):
+        if i == j or round(i, 4) == round(j, 4):
             j = 1
         i = j
 

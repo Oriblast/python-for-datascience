@@ -71,7 +71,7 @@ def main():
         #if i != "Hogwarts House":
             #check_nb_str(data[i])
             for j in range(len(data)):
-                data.loc[j, i] /= 100
+                data.loc[j, i] /= 10000
 
     feat1 = {
         "Astronomy": data["Astronomy"],
@@ -153,11 +153,11 @@ def main():
             elif var == 4:
                 writer.writerow([i, "Hufflepuff"])
                 ls[i] = "Hufflepuff"
-    ls_r = data["Hogwarts House"].tolist()
+    """ls_r = data["Hogwarts House"].tolist()
     accuracy = accuracy_score(ls_r, ls)
     print(f'Accuracy du modèle : {accuracy:.2f}')
     print(ls_r)
-    print(ls)
+    print(ls)"""
 
 
 if __name__ == "__main__":
