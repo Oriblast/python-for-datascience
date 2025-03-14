@@ -4,6 +4,7 @@ import pandas as pd
 import os 
 import math
 import csv
+import sys
 from sklearn.metrics import accuracy_score
 from logreg_train import *
 
@@ -47,7 +48,11 @@ def check_nan(data):
 
 def main():
     """programme de prédiction"""
-    data = pd.read_csv("dataset_train.csv")
+    if (len(sys.argv) != 2):
+        print("pas d'arguments")
+        return
+    data = pd.read_csv(sys.argv[1])
+
     c_biais = pd.read_csv("Ravenclaw_biais.csv")
     c_feat = pd.read_csv("Ravenclaw_featureW.csv")
     s_biais = pd.read_csv("Slytherin_biais.csv")
@@ -71,7 +76,7 @@ def main():
         #if i != "Hogwarts House":
             #check_nb_str(data[i])
             for j in range(len(data)):
-                data.loc[j, i] /= 10000
+                data.loc[j, i] /= 1000
 
     feat1 = {
         "Astronomy": data["Astronomy"],
@@ -126,10 +131,10 @@ def main():
     feature3 = check_nan(feat3)
     feature4 = check_nan(feat4)
 
-    yr = sigmoïde(feature1, c_feat, c_biais.iloc[0, 0], "Hogwarts House", c_biais)
-    ys = sigmoïde(feature2, s_feat, s_biais.iloc[0, 0], "Hogwarts House", s_biais)
-    yg = sigmoïde(feature3, g_feat, g_biais.iloc[0, 0], "Hogwarts House", g_biais)
-    yh = sigmoïde(feature4, h_feat, h_biais.iloc[0, 0], "Hogwarts House", h_biais)
+    yr = sigmoïde(feature1, c_feat, c_biais.iloc[0, 0])
+    ys = sigmoïde(feature2, s_feat, s_biais.iloc[0, 0])
+    yg = sigmoïde(feature3, g_feat, g_biais.iloc[0, 0])
+    yh = sigmoïde(feature4, h_feat, h_biais.iloc[0, 0])
 
     ls = [0] * len(feature1)
     with open("house.csv", mode="w", newline="") as file:
