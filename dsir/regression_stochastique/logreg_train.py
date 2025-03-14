@@ -19,19 +19,43 @@ def make_data1(arow1, arow2, set_):
         writer.writerow(arow1)
         writer.writerow(arow2)
 
-def sigmoïde(feature, w, b):
+def maj_b(b2, feature, y2, set_name, i):
+    """il s'agit de la dérivé du cout j sur le biais b"""
+
+    if (feature["set"][i] == set_name):
+        y = 1
+    else:
+        y = 0
+    b1 = y2 - y
+    b = b2.iloc[0, 0] - b2.iloc[0, 1] * b1
+    make_data2(["b", "a"], [b, 0.03], set_name)
+
+def maj_w(w2, feature, y2, set_name, a, i):
+    w = w2.copy()
+    """il s'agit de la dérivé du cout j sur le poid w  """
+    for j in feature.columns:
+        if j != "set":
+            if (feature["set"][i] == set_name):
+                y = 1
+            else:
+                y = 0
+            w.loc[0, j] = (y2 - y) * feature[j][i]
+
+    for j in w2.columns:
+        w2.loc[0, j] = w2.loc[0, j] - a * w[j][0]
+    make_data1(columnsName_ls(w2), columns_ls(w2), set_name)
+
+def sigmoïde(feature, w, b, set_name, b2):
     """sigmoide fonction to determine probability y"""
     z = [0.0] * len(feature)
     y2 = [0] * len(feature)
     for i in feature.columns:
         if i != s1:
             for j in range(len(feature)):
-                z[j] = feature[i][j] * w[i][0]
-                
-    for i in range(len(z)):
-        z[i] = (z[i] + b)
-    for i in range(len(y2)):
-        y2[i] = 1 / (1 + math.exp(-z[i]))
+                z[j] = feature[i][j] * w[i][0] + b
+                y2[j] = 1 / (1 + math.exp(-z[j]))
+                maj_b(b2, feature, y2[j], set_name, j)
+                maj_w(w, feature, y2[j], set_name, b2["a"][0], j)
     return y2
 
 def columnsName_ls(feature):
@@ -67,34 +91,7 @@ def log_loss(feature, set_name, y2):
     print(ll)
     return ll
 
-def maj_b(b2, feature, y2, set_name):
-    b = 0
-    w = [0] * len(feature)
-    """il s'agit de la dérivé de j sur w et b"""
-    for i in range(len(feature)):
-        if (feature["set"][i] == set_name):
-            y = 1
-        else:
-            y = 0
-        b += y2[i] - y
-    b = b2.iloc[0, 0] - b2.iloc[0, 1] * ((1/len(feature)) * b)
-    make_data2(["b", "a"], [b, 0.03], set_name)
 
-def maj_w(w2, feature, y2, set_name, a):
-    w = w2.copy()
-    """il s'agit de la dérivé de j sur w et b"""
-    for j in feature.columns:
-        if j != "set":
-            w.loc[0,j] = 0
-            for i in range(len(feature)):
-                if (feature["set"][i] == set_name):
-                    y = 1
-                else:
-                    y = 0
-                w.loc[0, j] += (y2[i] - y) * feature[j][i]
-    for i in w2.columns:
-        w2.loc[0, i] = w2.loc[0, i] - a * ((1/len(feature)) * w[i][0])
-    make_data1(columnsName_ls(w2), columns_ls(w2), set_name)
 
 def rLogistic_train(feature, set_name):
     """entrainement donné """
@@ -106,11 +103,9 @@ def rLogistic_train(feature, set_name):
         make_data1(ls, init_data, set_name)
     data_b = pd.read_csv(set_name + "_biais.csv")
     data_w = pd.read_csv(set_name + "_featureW.csv")
-    y2 = sigmoïde(feature, data_w, data_b.iloc[0, 0])
+    y2 = sigmoïde(feature, data_w, data_b.iloc[0, 0], set_name, data_b)
     j = log_loss(feature, set_name, y2)
     if j > 0.01:
-        maj_b(data_b, feature, y2, set_name)
-        maj_w(data_w, feature, y2, set_name, data_b["a"][0])
         return j
     else:
         return 1

@@ -141,6 +141,18 @@ def percen(data, p):
 def percen0(data, perce):
     return {col :percen(data[col], perce) for col in data.columns}
 
+
+def nan_(data):
+    nb_nan = 0
+    for j in range(len(data)):
+        if np.isnan(data[i][j]):
+            nb_nan[j] += 1 
+    return nb_nan
+
+def nan(data):
+    return {col: nan_(data[col]) for col in data.columns}
+
+    
 def describe_statistics(data):
     """Calcule les statistiques et les retourne sous forme de DataFrame"""
     stats = {
@@ -152,6 +164,13 @@ def describe_statistics(data):
         "50%": percen0(data, 50),
         "75%": percen0(data, 75),
         "Max": max_max(data),
+        "10%": percen0(data, 10),
+        "42%": percen0(data, 42),
+        "35%": percen0(data, 35),
+        "60%": percen0(data, 60),
+        "95%": percen0(data, 95),
+        "nan": nan(data)
+
     }
     stats = pd.DataFrame(stats)  # Convertit en DataFrame Pandas
     return stats.T
