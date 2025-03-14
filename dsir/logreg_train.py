@@ -29,7 +29,7 @@ def sigmoïde(feature, w, b):
                 z[j] = feature[i][j] * w[i][0]
                 
     for i in range(len(z)):
-        z[i] += b 
+        z[i] = (z[i] + b)
     for i in range(len(y2)):
         y2[i] = 1 / (1 + math.exp(-z[i]))
     return y2
@@ -63,6 +63,7 @@ def log_loss(feature, set_name, y2):
             ll += y * math.log(y2[i]) + (1 - y) * math.log(1 - y2[i])
     
     ll = -(1/ len(feature)) * ll
+    print(set_name)
     print(ll)
     return ll
 
@@ -98,7 +99,7 @@ def maj_w(w2, feature, y2, set_name, a):
 def rLogistic_train(feature, set_name):
     """entrainement donné """
     if not os.path.exists(set_name + "_biais.csv") or not os.path.exists(set_name + "_featureW.csv"):
-        make_data2(["b", "a"], [0, 1], set_name)
+        make_data2(["b", "a"], [0, 0.03], set_name)
         ls = columnsName_ls(feature)
         ls.pop(0)
         init_data = [0.0] * len(ls)
@@ -107,11 +108,10 @@ def rLogistic_train(feature, set_name):
     data_w = pd.read_csv(set_name + "_featureW.csv")
     y2 = sigmoïde(feature, data_w, data_b.iloc[0, 0])
     j = log_loss(feature, set_name, y2)
-    if j > 0.3:
-        print("dark")
+    if j > 0.01:
         maj_b(data_b, feature, y2, set_name)
         maj_w(data_w, feature, y2, set_name, data_b["a"][0])
-        return 0
+        return j
     else:
         return 1
     return 0
@@ -120,7 +120,13 @@ def check_nan(data):
     feature = pd.DataFrame(data)
     for i in feature.columns:
         if i != s1:
-            check_nb_str(data[i])
+            moyenne = feature[i].mean()
+            #check_nb_str(feature[i])
+            for j in range(len(feature)):
+                if np.isnan(feature[i][j]):
+                    feature.loc[j, i] = moyenne
+            #feature[i].fillna(moyenne)
+
     return feature
 
 def main ():
@@ -129,54 +135,95 @@ def main ():
         print("fichier d'entrainement inexistant. File : dataset_train.csv")
         return
     data = pd.read_csv("dataset_train.csv")
+
+    for i in data.columns:
+        if i == "Astronomy" or i == "Care of Magical Creatures" or i == "Ancient Runes" or i == "Herbology" or i == "Muggle Studies" or i == "Divination" or i == "Flying" or i == "Charms" or i == "Defense Against the Dark Arts" or i == "Transfiguration" or i == "Potions":
+        #if i != "Hogwarts House":
+            #check_nb_str(data[i])
+            for j in range(len(data)):
+                data.loc[j, i] /= 100
     feat1 = {
         "set" : data["Hogwarts House"],
         "Astronomy": data["Astronomy"],
         "Herbology": data["Herbology"],
-        "Muggle Studies" : data["Muggle Studies"],
-        "Charms" : data["Charms"],
-        "Ancient Runes" : data["Ancient Runes"]
+        "Muggle Studies" : data["Muggle Studies"]
+       # "Ancient Runes" : data["Ancient Runes"]
     }
     feat2 = {
         "set" : data["Hogwarts House"],
-        "Astronomy": data["Astronomy"],
-        "Herbology": data["Herbology"],
+        #"Astronomy": data["Astronomy"],
+        #"Herbology": data["Herbology"],
+        #"Defense Against the Dark Arts": data["Defense Against the Dark Arts"],
         "Divination" : data["Divination"],
-        "Ancient Runes" : data["Ancient Runes"]
+        #"Potions" : data["Potions"],
+        
+        #"Care of Magical Creatures" : data["Care of Magical Creatures"],
+        
+        #"Muggle Studies" : data["Muggle Studies"]
+        #"Ancient Runes" : data["Ancient Runes"]
+        "Charms" : data["Charms"],
+        "Flying" : data["Flying"]
+        #"Transfiguration" : data["Transfiguration"]
     }
     feat3 = {
         "set" : data["Hogwarts House"],
-        "Astronomy": data["Astronomy"],
-        "Herbology": data["Herbology"],
+        #"Astronomy": data["Astronomy"],
+        #"Herbology": data["Herbology"],
         "History of Magic" : data["History of Magic"],
-        "Flying" : data["Flying"],
-        "Ancient Runes" : data["Ancient Runes"]
+        "Flying" : data["Flying"]
+        #"Ancient Runes" : data["Ancient Runes"]
+        #"Transfiguration" : data["Transfiguration"]
     }
     feat4 = {
         "set" : data["Hogwarts House"],
         "Astronomy": data["Astronomy"],
         "Herbology": data["Herbology"],
-        "Charms" : data["Charms"],
-        "Ancient Runes" : data["Ancient Runes"]
+        #"Defense Against the Dark Arts": data["Defense Against the Dark Arts"],
+        #"Potions" : data["Potions"],
+        #"Charms" : data["Charms"],
+        #"Divination" : data["Divination"],
+        "Ancient Runes" : data["Ancient Runes"],
+        #"Charms" : data["Charms"],
+        #"Flying" : data["Flying"]
+        #"Transfiguration" : data["Transfiguration"]
+        #"Care of Magical Creatures" : data["Care of Magical Creatures"],
+        #"Muggle Studies" : data["Muggle Studies"]
+
     }
     
     feature1 = check_nan(feat1)
     feature2 = check_nan(feat2)
     feature3 = check_nan(feat3)
     feature4 = check_nan(feat4)
+    j = 0
+    i = 1000
 
+    while j != 1:
+        j = rLogistic_train(feature1, "Ravenclaw")
+        if i == j or round(i, 6) == round(j, 6):
+            j = 1
+        i = j
     j = 0
-    while j == 0:
-        j += rLogistic_train(feature1, "Ravenclaw")
+    i = 1000
+    while  j != 1:
+        j = rLogistic_train(feature2, "Slytherin")
+        if i == j or round(i, 6) == round(j, 6):
+            j = 1
+        i = j
     j = 0
-    while j == 0:
-        j +=rLogistic_train(feature2, "Slytherin")
+    i = 1000
+    while j != 1:
+        j = rLogistic_train(feature3, "Gryffindor")
+        if i == j or round(i, 6) == round(j, 6):
+            j = 1
+        i = j
     j = 0
-    while j == 0:
-        j += rLogistic_train(feature3, "Gryffindor")
-    j = 0
-    while j == 0:
-        j += rLogistic_train(feature4, "Hufflepuff")
+    i = 1000
+    while j != 1:
+        j = rLogistic_train(feature4, "Hufflepuff")
+        if i == j or round(i, 6) == round(j, 6):
+            j = 1
+        i = j
 
 if __name__ == "__main__":
     main()
