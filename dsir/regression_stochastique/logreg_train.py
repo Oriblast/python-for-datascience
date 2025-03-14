@@ -137,7 +137,7 @@ def main ():
         #if i != "Hogwarts House":
             #check_nb_str(data[i])
             for j in range(len(data)):
-                data.loc[j, i] /= 10000
+                data.loc[j, i] /= 100000
     feat1 = {
         "set" : data["Hogwarts House"],
         "Astronomy": data["Astronomy"],

@@ -152,7 +152,7 @@ def main ():
         #if i != "Hogwarts House":
             #check_nb_str(data[i])
             for j in range(len(data)):
-                data.loc[j, i] /= 1000
+                data.loc[j, i] /= 100000
     feat1 = {
         "set" : data["Hogwarts House"],
         "Astronomy": data["Astronomy"],
@@ -211,7 +211,7 @@ def main ():
 
     while j != 1:
         j = rLogistic_train(feature1, "Ravenclaw")
-        if i == j or round(i, 8) == round(j, 8):
+        if i == j or round(i, 6) == round(j, 6):
             j = 1
         i = j
     j = 0
