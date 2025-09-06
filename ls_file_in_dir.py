@@ -7,8 +7,11 @@ def ls_of_file(dir):
         ls_file = {}
         ls_dir = glob.glob(os.path.join(dir, '*'))
         for i in ls_dir:
-            if os.path.isdir(i):
-                ls_file[i] = glob.glob((os.path.join(i, '*'))
+                if os.path.isdir(i):
+                        ls_file[i] = glob.glob((os.path.join(i, '*'))
+                else:
+                        if not ls_file[dir.split('/')[-1]]: ls_file[dir.split('/')[-1]] = []
+                        ls_file[dir.split('/')[-1]].append[i]                               
         ls_file = glob.glob(modele)
         return ls_file
 
