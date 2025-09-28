@@ -1,0 +1,14 @@
+flake8
+matplotlib
+requests
+argparse
+numpy==1.22.0
+torch
+torchvision
+tensorboard==2.17.1
+opencv-python
+plantcv==3.14.3
+plotnine==0.8.0
+mizani==0.7.3
+tqdm
+imgcat==0.5.0

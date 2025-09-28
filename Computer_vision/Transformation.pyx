@@ -1,6 +1,7 @@
 from re import L
-import plantcv as pcv
+from plantcv import plantcv as pcv
 import cv2
+import os
 import numpy as np
 from matplotlib import pyplot as plt
 from typing import Tuple, Optional, List
@@ -15,9 +16,31 @@ class options:
         self.result = "plantcv_results.json" 
         self.outdir = "."
 
-pcv.params.debug = "plot"  # histoire d'avoir less images intermédiaires 
+#pcv.set_param("debug", "print")
+ # histoire d'avoir less images intermédiaires 
+def load_image_rgb_safe(image) -> np.ndarray:
 
-def ft_gaussien_blur(image: np.ndarray, ksize: Tuple[int, int] = (5, 5)) -> np.ndarray:
+    if image is None:
+        raise ValueError(f"⚠️ Image introuvable ou corrompue")
+
+    if len(image.shape) == 2:
+        # Image en niveaux de gris → convertir en RGB artificiel
+        print(f"ℹ️ Image en niveaux de gris détectée, conversion forcée en RGB")
+        image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
+
+    elif image.shape[2] == 4:
+        # Image avec canal alpha → retirer alpha
+        print(f"ℹ️ Image avec transparence détectée, suppression du canal alpha ")
+        image = image[:, :, :3]
+
+    elif image.shape[2] != 3:
+        raise ValueError(f"❌ Nombre de canaux inattendu ({image.shape[2]}) dans l'image")
+
+    # Convertir BGR → RGB pour compatibilité PlantCV
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    return image_rgb
+
+def ft_gaussien_blur(image: np.ndarray, ksize: Tuple[int, int] = (555, 555)) -> np.ndarray:
     """
     Applique un flou gaussien pour réduire le bruit et lisser l'image.
     Étape cruciale de prétraitement avant la segmentation.
@@ -36,10 +59,10 @@ def ft_gaussien_blur(image: np.ndarray, ksize: Tuple[int, int] = (5, 5)) -> np.n
     else:
         img = image
 
-    blur_img = pcv.gaussien_blur(img=img, ksize=ksize)
+    blur_img = pcv.gaussian_blur(img=img, ksize=ksize)
     return blur_img
 
-def leaf_mask(image: np.ndarray, blur_ksize: Tuple[int, int] = (5, 5)) -> np.ndarray:
+def leaf_mask(image: np.ndarray) -> np.ndarray:
     """
     Crée un masque binaire segmentant la feuille de l'arrière-plan.
     Cœur de l'analyse PlantCV - isole l'objet d'intérêt.
@@ -55,27 +78,17 @@ def leaf_mask(image: np.ndarray, blur_ksize: Tuple[int, int] = (5, 5)) -> np.nda
     Returns:
         np.ndarray: Masque binaire où la feuille est blanche (255) et le fond noir (0).
     """
-    g_blur = ft_gaussien_blur(image, blur_ksize)
+    a_channel = pcv.rgb2gray_lab(rgb_img=image, channel='a')
+    bin_mask = pcv.threshold.binary(gray_img=a_channel, threshold=100, object_type='light')
+    
+    # Nettoyage du masque
+    cleaned_mask = pcv.fill(bin_img=bin_mask, size=200)
+    cleaned_mask = pcv.erode(gray_img=cleaned_mask, ksize=3, i=1)
+    cleaned_mask = pcv.dilate(gray_img=cleaned_mask, ksize=3, i=1)
+    
+    return cleaned_mask
 
-    a_channel = pcv.rgb2gray_lab(g_blur, channel='a')
-    b_channel = pcv.rgb2gray_lab(g_blur, channel='b') #Le canal 'b' (bleu-jaune) est excellent pour segmenter le vert des plantes
-
-    # Seuillage pour créer le masque
-    # Ajuste ces valeurs en fonction de tes images !
-
-    mask = pcv.threshold.binary(gray_img=b_channel,
-                                threshold=125, 
-                                max_value=255,
-                                object_type="light")
-
-    #on nettoie le mask pour se déparasser des petits artefacts
-    clean_mask = pcv.fill(bin_img=mask, size=200)
-    clean_mask = pcv.erode(clean_mask, ksize=3, iterations=1)
-    clean_mask = pcv.dilate(clean_mask, ksize=3, iterations=1)
-
-    return clean_mask
-
-def roi_objects(image: np.ndarray, mask: np.ndarray) -> Tuple[np.ndarray, List]:
+def roi_objects(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
     """
         Identifie et extrait les Régions d'Intérêt (ROI) à partir du masque.
         
@@ -91,27 +104,17 @@ def roi_objects(image: np.ndarray, mask: np.ndarray) -> Tuple[np.ndarray, List]:
                 - Image avec les ROI dessinées
                 - Liste des objets identifiés
         """
-    # Trouve les contours et hiérarchise les objets
-    objets, hierarchy = pcv.find_objects(img=image, mask=mask)
-
-    #cree le roi autour de la feuille
-    roi_contour = pcv.roi.rectangle(img=image, x=0, y=0,
-                                    w=image.shape[0],
-                                    h=image.shape[1])
-    filtered_object, filtered_hiérarchy, filtered_mask = pcv.roi.objets(
-        img=image,
-        roi_contour=roi_contour,
-        roi_herarchy=[0],
-        object_contour=objets,
-        obj_hierarchy=hierarchy
-    )
-    #dessin des objets sur les images
-    roi_img = pcv.analyse.objects(img=image, objects=filtered_object,
-                                mask=filtered_mask)
-    return roi_img, filtered_object
+    height, width = image.shape[:2]
+    roi = pcv.roi.rectangle(img=image, x=width//4, y=height//4, 
+                           w=width//2, h=height//2)
+    
+    # Filtrage du masque avec la ROI
+    filtered_mask = pcv.roi.filter(mask=mask, roi=roi, roi_type='partial')
+    
+    return filtered_mask
 
 
-def analyze_objects(image: np.ndarray, mask: np.ndarray, objects: List) -> dict:
+def analyze_objects(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
     """
     Analyse les objets détectés et extrait des caractéristiques morphologiques.
     
@@ -126,18 +129,9 @@ def analyze_objects(image: np.ndarray, mask: np.ndarray, objects: List) -> dict:
     Returns:
         dict: Dictionnaire des caractéristiques morphologiques.
     """
-    #mesure les traits de forme 
-    analyze_img = image.copy()
-    #analyse la forme 
-    analyze_img = pcv.analyze.size(img=analyze_img, mask=mask,
-                            labeled_mask=None)
-    #mesure la couleurs dans divers zone
-    analyze_img = pcv.analyse.color(img=analyze_img, mask=mask,
-                            colorspaces="hsv")
-    
-    analyze_img = pcv.analyse.texture(img=analyze_img, mask=mask,
-                        k=5, distance=1)
-    return pcv.outputs.observations
+    # Analyse de la taille et de la forme
+    analysis_img = pcv.analyze.size(img=image, labeled_mask=mask, n_labels=1)
+    return analysis_img
 
 def create_pseudolandmarks(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
     """
@@ -155,19 +149,37 @@ def create_pseudolandmarks(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
         np.ndarray: Image avec les pseudorepères dessinés.
     """
 
-    land_mask = image.copy()
-
-    contours = pcv.find_objects(img=image, mask=mask)
-
+    landmarks_img = image.copy()
+    
+    # Utilise OpenCV directement pour trouver les contours
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
     if len(contours) > 0:
-        #prend el plus grand contours de la feuille
-        main_contour = max(contours, key=lambda x: cv2.contourArea(x))
-        # repere
-        land_mask = pcv.landmarks.reference_pts(img=land_mask, 
-            roi_contour=[main_contour], npts=30
-            )
-    return land_mask
-
+        # Prend le plus grand contour (la feuille)
+        main_contour = max(contours, key=cv2.contourArea)
+        
+        # Convertit le contour au format attendu par PlantCV
+        contour_points = main_contour.reshape(-1, 2)
+        
+        # Génère les pseudorepères (vérifie si cette fonction existe toujours)
+        try:
+            landmarks_img = pcv.landmarks.reference_pts(img=landmarks_img, 
+                                                      roi_contour=[contour_points],
+                                                      npts=12)
+        except AttributeError:
+            # Fallback si landmarks.reference_pts n'existe pas
+            print("⚠️  pcv.landmarks.reference_pts non disponible, utilisation d'OpenCV")
+            # Dessine les points manuellement
+            for i in range(12):
+                angle = 2 * np.pi * i / 12
+                radius = min(image.shape[0], image.shape[1]) // 3
+                center_x, center_y = image.shape[1] // 2, image.shape[0] // 2
+                x = int(center_x + radius * np.cos(angle))
+                y = int(center_y + radius * np.sin(angle))
+                cv2.circle(landmarks_img, (x, y), 5, (0, 255, 0), -1)
+    
+    return landmarks_img
+    
 def create_color_histogram(image: np.ndarray, mask: np.ndarray) -> plt.Figure:
     """
     Génère et affiche l'histogramme des couleurs de la feuille dans différents espaces colorimétriques.
@@ -272,3 +284,44 @@ def create_color_histogram(image: np.ndarray, mask: np.ndarray) -> plt.Figure:
     
     plt.tight_layout()
     return fig
+
+def transform_one_file(img) -> dict:
+    """
+    Exécute le pipeline complet de transformation PlantCV sur une image.
+    
+    Args:
+        image_path (str): Chemin vers l'image à analyser.
+        output_dir (str): Dossier de sortie pour les résultats.
+        
+    Returns:
+        dict: Tous les résultats d'analyse et images transformées.
+    """
+    
+    # Redimensionne si nécessaire pour la démo
+    
+    results = {}
+    
+    # 1. Flou Gaussien (prétraitement)
+    gray_img = pcv.rgb2gray_lab(rgb_img=img, channel='l')
+    results['Gaussian_Blur'] = pcv.gaussian_blur(img=gray_img, ksize=(5, 5))
+    
+    # 2. Création du masque
+    results['Mask'] = leaf_mask(img)
+    
+    # 3. ROI et filtrage (CORRIGÉ - plus de roi_objects)
+    results['Filtered_Mask'] = roi_objects(img, results['Mask'])
+    
+    # 4. Analyse morphologique (CORRIGÉ)
+    results['Analysis_Image'] = analyze_objects(img, results['Filtered_Mask'])
+    
+    # 5. Pseudorepères
+    results['Landmarks'] = create_pseudolandmarks(img, results['Filtered_Mask'])
+    
+    # 6. Histogramme des couleurs (TA VERSION CORRECTE)
+    color_hist_fig = create_color_histogram(img, results['Mask'])
+    hist_path = os.path.join(".", "color_histogram.png")
+    color_hist_fig.savefig(hist_path, dpi=150, bbox_inches='tight')
+    plt.close(color_hist_fig)  # Libère la mémoire
+    results['Color_Histogram'] = hist_path
+    pcv.outputs.save_results(filename=os.path.join(".", "results.json"))
+    return results

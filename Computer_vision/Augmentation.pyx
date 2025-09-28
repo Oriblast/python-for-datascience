@@ -156,7 +156,7 @@ def distortion(image: np.ndarray, distortion_limit: float = 0.2) -> np.ndarray:
                                    p=1.0)
     transformed = transform(image=image)
     return transformed['image']
-def blur(image: np.ndarray, blur_limit: Tuple[int, int] = (3, 7)) -> np.ndarray:
+def blur(image: np.ndarray, blur_limit: Tuple[int, int] = (11, 13)) -> np.ndarray:
     """
     Applique un flou gaussien aléatoire à l'image.
     
@@ -209,13 +209,20 @@ def augment_one_file(image: np.ndarray) -> dict:
     """
     results = {}
     
+    
+    
+    
+    shear(image, my_shear=(-0.5, 0.5))
+
+
+
     results['Flip'] = flip(image)
-    results['Rotate'] = rotate(image)
-    results['Skew'] = skew(image)
-    results['Shear'] = shear(image)
-    results['Crop'] = crop(image)
-    results['Distortion'] = distortion(image)
-    #results['Blur'] = blur(image)
-    #results['Contrast'] = contrast(image)
+    #results['Rotate'] = rotate(image, angle=(-90, 90))
+    results['Skew'] = skew(image, my_scale=(0.2, 0.4))
+    results['Shear'] = shear(image, my_shear=(-25.0, 25.0))
+    #results['Crop'] = crop(image, my_scale=(1.0, 1.0))
+    results['Distortion'] = distortion(image, distortion_limit=25)
+    results['Blur'] = blur(image)
+    results['Contrast'] = contrast(image)
     
     return results

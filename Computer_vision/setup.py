@@ -2,8 +2,8 @@ from setuptools import setup, Extension
 from Cython.Build import cythonize
 import numpy
 
-ls_cy_file = ["distribution.pyx", "ls_file_in_dir.pyx", "Augmentation.pyx"]  # ou ta liste de fichiers .pyx
-
+ls_cy_file = ["distribution.pyx", "ls_file_in_dir.pyx", "Augmentation.pyx"]
+ls_cy_file.append("Transformation.pyx")
 extensions = [
     Extension(
         name=file.replace(".pyx", ""),  # nom du module
