@@ -52,6 +52,8 @@ def main():
     programme principal permettant de faire l'augmentation """
     if len(sys.argv) < 2:
         return -1
+    if os.path.isdir("augmented_directory"):
+        shutil.rmtree("augmented_directory")
     os.makedirs("augmented_directory", exist_ok=True)
 
     image = []
@@ -75,10 +77,14 @@ def main():
         max_nb_file = 0
         ad = "augmented_directory"
         for i in ls_dir:
-            ad = "augmented_directory/" + i.split('/')[-1]
-            if max_nb_file < len(ls_dir[i]):
-                max_nb_file = len(ls_dir[i])
-            shutil.copytree(os.path.join(root, i), ad, dirs_exist_ok=True)
+            if os.path.isdir(i)
+                ad = "augmented_directory/" + i.split('/')[-1]
+                if max_nb_file < len(ls_dir[i]):
+                    max_nb_file = len(ls_dir[i])
+                shutil.copytree(os.path.join(root, i), ad, dirs_exist_ok=True)
+            elif os.path.isfile(i):
+                ad = "augmented_directory/" + i.split('/')[-1]
+                shutil.copy2(i, ad)
         ls_dir = ls_of_file("augmented_directory")
         for path in ls_dir:
             if max_nb_file > len(ls_dir[path]):
@@ -95,6 +101,16 @@ def main():
                                 file_name = file.split('/')[-1] + f"_{k}.jpg"
                                 cv2.imwrite(f"{path}/{file_name}", imgs[k])
                                 nb_transform -= 1
+                elif os.path.isfile(path):
+                    imgs = augment_one_file(cv2.imread(path))
+                    for k in imgs:
+                        if nb_transform <= 0:
+                            break
+                        ad = "augmented_directory"
+                        file_name = path.split('/')[-1] + f"_{k}.jpg"
+                        cv2.imwrite(f"{ad}/{file_name}", imgs[k])
+                        nb_transform -= 1
+
 
 
 if __name__ == "__main__":

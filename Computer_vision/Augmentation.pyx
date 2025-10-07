@@ -96,12 +96,6 @@ def shear(image: np.ndarray, my_shear: Tuple[float, float] = (-0.1, 0.1)) -> np.
     transform = A.Affine(shear=my_shear, keep_ratio=True,
     mode=cv2.BORDER_REFLECT_101, p=1.0)
     return transform(image=image)["image"]
-    transform = A.Affine(shear=my_shear, 
-                        keep_ratio=True,
-                        mode=cv2.BORDER_REFLECT_101,
-                        p=1.0)
-    transformed = transform(image=image)
-    return transformed['image']
 
 def crop(image: np.ndarray, my_scale: Tuple[float, float] = (0.8, 0.9)) -> np.ndarray:
     """

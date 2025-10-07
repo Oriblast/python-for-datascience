@@ -5,11 +5,12 @@ import sys
 import os
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")  # backend non interactif
-import matplotlib.pyplot as plt
+
 import cv2
+import shutil
 from plantcv import plantcv as pcv
 
+matplotlib.use("Agg")  # backend non interactif
 
 # --- Transformation 1 : Original ---
 def transform_original(img):
@@ -30,16 +31,17 @@ def transform_gaussian_blur(img):
     return mask
 
 
-# --- Transformation 3 : Mask (HSV, vert) ---
 def transform_mask(img):
     s = pcv.rgb2gray_hsv(rgb_img=img, channel='s')
-    mask = pcv.threshold.binary(gray_img=s, threshold=40, max_value=255, object_type='light')
+    mask = pcv.threshold.binary(
+        gray_img=s, threshold=40, max_value=255,
+            object_type='light'
+    )
     mask = pcv.fill(bin_img=mask, size=200)
     masked = pcv.apply_mask(img=img, mask=mask, mask_color='white')
     return masked, mask
 
 
-# --- Transformation 4 : ROI avec vert lumineux sur zones retenues et couleurs naturelles ailleurs ---
 def transform_roi_objects(img, mask):
     roi_contour, roi_hierarchy = pcv.roi.rectangle(
         img=img, x=0, y=0, h=img.shape[0], w=img.shape[1]
@@ -70,66 +72,93 @@ def transform_analyze_object(img, mask):
     return analyze_img
 
 
-# --- Transformation 6 : Pseudolandmarks ---
 def transform_pseudolandmarks(img, mask):
+    if os.path.exists("output"):
+        shutil.rmtree("output")
+    os.makedirs("output")
+
     objects, hierarchy = pcv.find_objects(img, mask)
     obj, mask_comb = pcv.object_composition(img, objects, hierarchy)
+
     pcv.params.debug = "print"
     pcv.params.debug_outdir = "output"
+    
     _coords, top, bottom = pcv.y_axis_pseudolandmarks(
-        img=img,
-        obj=obj,
-        mask=mask_comb
+        img=img, obj=obj, mask=mask_comb
     )
+
+    
     pcv.params.debug = None
-    return img  # les visuels sont sauvegardés automatiquement par PlantCV
+
+    files = os.listdir("output")
+    if len(files) != 1:
+        raise RuntimeError(
+            f"Expected 1 image in output/, found {len(files)}"
+        )
+    return cv2.imread(os.path.join("output", files[0]))
 
 
-# --- Transformation 7 : Color histogram ---
 def transform_color_histogram(img, mask):
+    if os.path.exists("output"):
+        shutil.rmtree("output")
+    os.makedirs("output")
+
     pcv.params.debug = "print"
     pcv.params.debug_outdir = "output"
-    pcv.analyze_color(
-        rgb_img=img,
-        mask=mask,
-        colorspaces="all"
-    )
+
+    pcv.analyze_color(rgb_img=img, mask=mask, colorspaces="all")
+
     pcv.params.debug = None
+
+    files = os.listdir("output")
+    if len(files) != 1:
+        raise RuntimeError(f"Expected 1 image in output/, found {len(files)}")
+    return cv2.imread(os.path.join("output", files[0]))
+
 
 
 # --- Pipeline principal ---
-def main(image_path):
-    if not os.path.exists("output"):
-        os.makedirs("output")
+def process_image_pipeline(image: np.ndarray) -> dict:
+    """
+    Applique une série de transformations d'analyse d'image 
+    et retourne les résultats.
 
-    img, path, filename = pcv.readimage(image_path)
+    Cette fonction est utile pour visualiser les étapes successives 
+    du pipeline
+    d'analyse d'image sans sauvegarder les fichiers.
+
+    Args:
+        image (np.ndarray): Image d'entrée au format OpenCV (BGR).
+
+    Returns:
+        dict: Dictionnaire contenant les images transformées 
+        à chaque étape.
+    """
+    results = {}
 
     # 1. Original
-    pcv.print_image(transform_original(img), "output/1_original.png")
+    results['Original'] = transform_original(image)
 
-    # 2. Gaussian Blur + threshold intermédiaire (masque binaire)
-    blur_mask = transform_gaussian_blur(img)
-    pcv.print_image(blur_mask, "output/2_gaussian_blur_mask.png")
+    # 2. Gaussian Blur + masque binaire
+    results['Gaussian Blur Mask'] = transform_gaussian_blur(image)
 
-    # 3. Mask HSV + application
-    masked, mask = transform_mask(img)
-    pcv.print_image(masked, "output/3_mask.png")
+    # 3. Masque HSV + application
+    masked, mask = transform_mask(image)
+    results['Masked Image'] = masked
+    results['Mask'] = mask
 
-    # 4. ROI (vert lumineux, pas de violet)
-    roi_img = transform_roi_objects(img, mask)
-    pcv.print_image(roi_img, "output/4_roi.png")
+    # 4. ROI (extraction des objets d'intérêt)
+    results['ROI'] = transform_roi_objects(image, mask)
 
-    # 5. Analyze Object
-    analyze_img = transform_analyze_object(img, mask)
-    pcv.print_image(analyze_img, "output/5_analyze.png")
+    # 5. Analyse des objets
+    results['Analyzed Object'] = transform_analyze_object(image, mask)
 
-    # 6. Pseudolandmarks (sauvegardés automatiquement)
-    transform_pseudolandmarks(img, mask)
+    results['pseudo'] = transform_pseudolandmarks(image, mask)
 
-    # 7. Color histogram (sauvegardés automatiquement)
-    transform_color_histogram(img, mask)
+    results['histogram'] = transform_color_histogram(image, mask)
 
-    print("✅ Toutes les images ont été générées dans le dossier 'output/'")
+    return results
+
 
 
 if __name__ == "__main__":
