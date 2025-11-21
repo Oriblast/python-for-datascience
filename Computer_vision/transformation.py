@@ -49,7 +49,7 @@ def main():
                     )
                     cv2.imshow(i, imgs[i])
 
-                    cv2.waitKey(10000)
+                    cv2.waitKey(0)
                     cv2.destroyAllWindows()
     if os.path.isdir(root):
         ls_dir = ls_of_file(root)
@@ -68,16 +68,20 @@ def main():
                 ad = f"{arg.dest}/" + i.split('/')[-1]
                 shutil.copy2(i, ad)
         ls_dir = ls_of_file(arg.dest)
-
+        
         for path in ls_dir:
+            
             if os.path.isdir(path):
                 for file in ls_dir[path]:
+                    
                     if os.path.isfile(file):
                         imgs = process_image_pipeline(cv2.imread(file))
                         os.remove(file)
                         for k in imgs:
+                            print("cofiguration termine")
                             file_name = file.split('/')[-1] + f"_{k}.jpg"
                             cv2.imwrite(f"{path}/{file_name}", imgs[k])
+                
             else:
                 
                 if os.path.isfile(path):

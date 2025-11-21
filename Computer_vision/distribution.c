@@ -4,7 +4,7 @@
 {
     "distutils": {
         "include_dirs": [
-            "/home/kali/cv_env/lib/python3.13/site-packages/numpy/core/include"
+            "/home/kali/Documents/python/Computer_vision/projete/lib/python3.9/site-packages/numpy/core/include"
         ],
         "name": "distribution",
         "sources": [
@@ -2273,6 +2273,7 @@ static const char __pyx_k_pie[] = "pie";
 static const char __pyx_k_plt[] = "plt";
 static const char __pyx_k_png[] = ".png";
 static const char __pyx_k_pop[] = "pop";
+static const char __pyx_k_use[] = "use";
 static const char __pyx_k_1_1f[] = "%1.1f%%";
 static const char __pyx_k_Path[] = "Path";
 static const char __pyx_k_func[] = "__func__";
@@ -2285,6 +2286,7 @@ static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_right[] = "right";
 static const char __pyx_k_split[] = "split";
 static const char __pyx_k_title[] = "title";
+static const char __pyx_k_Qt5Agg[] = "Qt5Agg";
 static const char __pyx_k_figure[] = "figure";
 static const char __pyx_k_img_nb[] = "img_nb";
 static const char __pyx_k_labels[] = "labels";
@@ -2363,7 +2365,7 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   PyObject *__pyx_tuple[2];
   PyObject *__pyx_codeobj_tab[1];
-  PyObject *__pyx_string_tab[59];
+  PyObject *__pyx_string_tab[61];
   PyObject *__pyx_int_10;
   PyObject *__pyx_int_45;
 /* #### Code section: module_state_contents ### */
@@ -2406,62 +2408,64 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_kp_u_ __pyx_string_tab[0]
 #define __pyx_kp_u_1_1f __pyx_string_tab[1]
 #define __pyx_n_u_Path __pyx_string_tab[2]
-#define __pyx_kp_u_Rpartition_des_images_par_maladi __pyx_string_tab[3]
-#define __pyx_kp_u__2 __pyx_string_tab[4]
-#define __pyx_kp_u__3 __pyx_string_tab[5]
-#define __pyx_kp_u__4 __pyx_string_tab[6]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[7]
-#define __pyx_n_u_autopct __pyx_string_tab[8]
-#define __pyx_n_u_bar __pyx_string_tab[9]
-#define __pyx_n_u_base_path __pyx_string_tab[10]
-#define __pyx_n_u_class_getitem __pyx_string_tab[11]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[12]
-#define __pyx_n_u_diagramme_circulaire __pyx_string_tab[13]
-#define __pyx_n_u_distribution __pyx_string_tab[14]
-#define __pyx_kp_u_distribution_png __pyx_string_tab[15]
-#define __pyx_kp_u_distribution_pyx __pyx_string_tab[16]
-#define __pyx_n_u_figsize __pyx_string_tab[17]
-#define __pyx_n_u_figure __pyx_string_tab[18]
-#define __pyx_n_u_func __pyx_string_tab[19]
-#define __pyx_n_u_ha __pyx_string_tab[20]
-#define __pyx_n_u_i __pyx_string_tab[21]
-#define __pyx_n_u_img_nb __pyx_string_tab[22]
-#define __pyx_n_u_initializing __pyx_string_tab[23]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[24]
-#define __pyx_n_u_labels __pyx_string_tab[25]
-#define __pyx_n_u_ls_element __pyx_string_tab[26]
-#define __pyx_n_u_ls_file_in_dir __pyx_string_tab[27]
-#define __pyx_n_u_ls_of_file __pyx_string_tab[28]
-#define __pyx_n_u_main __pyx_string_tab[29]
-#define __pyx_n_u_matplotlib __pyx_string_tab[30]
-#define __pyx_n_u_matplotlib_pyplot __pyx_string_tab[31]
-#define __pyx_n_u_module __pyx_string_tab[32]
-#define __pyx_n_u_name __pyx_string_tab[33]
-#define __pyx_n_u_name_2 __pyx_string_tab[34]
-#define __pyx_n_u_path __pyx_string_tab[35]
-#define __pyx_n_u_pathlib __pyx_string_tab[36]
-#define __pyx_n_u_pie __pyx_string_tab[37]
-#define __pyx_n_u_plt __pyx_string_tab[38]
-#define __pyx_kp_u_png __pyx_string_tab[39]
-#define __pyx_n_u_pop __pyx_string_tab[40]
-#define __pyx_n_u_pyplot __pyx_string_tab[41]
-#define __pyx_n_u_qualname __pyx_string_tab[42]
-#define __pyx_n_u_right __pyx_string_tab[43]
-#define __pyx_n_u_rotation __pyx_string_tab[44]
-#define __pyx_n_u_savefig __pyx_string_tab[45]
-#define __pyx_n_u_set_name __pyx_string_tab[46]
-#define __pyx_n_u_show __pyx_string_tab[47]
-#define __pyx_n_u_spec __pyx_string_tab[48]
-#define __pyx_n_u_split __pyx_string_tab[49]
-#define __pyx_n_u_test __pyx_string_tab[50]
-#define __pyx_n_u_tight_layout __pyx_string_tab[51]
-#define __pyx_n_u_title __pyx_string_tab[52]
-#define __pyx_n_u_type_img __pyx_string_tab[53]
-#define __pyx_n_u_x __pyx_string_tab[54]
-#define __pyx_n_u_xlabel __pyx_string_tab[55]
-#define __pyx_n_u_xticks __pyx_string_tab[56]
-#define __pyx_n_u_y __pyx_string_tab[57]
-#define __pyx_n_u_ylabel __pyx_string_tab[58]
+#define __pyx_n_u_Qt5Agg __pyx_string_tab[3]
+#define __pyx_kp_u_Rpartition_des_images_par_maladi __pyx_string_tab[4]
+#define __pyx_kp_u__2 __pyx_string_tab[5]
+#define __pyx_kp_u__3 __pyx_string_tab[6]
+#define __pyx_kp_u__4 __pyx_string_tab[7]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[8]
+#define __pyx_n_u_autopct __pyx_string_tab[9]
+#define __pyx_n_u_bar __pyx_string_tab[10]
+#define __pyx_n_u_base_path __pyx_string_tab[11]
+#define __pyx_n_u_class_getitem __pyx_string_tab[12]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[13]
+#define __pyx_n_u_diagramme_circulaire __pyx_string_tab[14]
+#define __pyx_n_u_distribution __pyx_string_tab[15]
+#define __pyx_kp_u_distribution_png __pyx_string_tab[16]
+#define __pyx_kp_u_distribution_pyx __pyx_string_tab[17]
+#define __pyx_n_u_figsize __pyx_string_tab[18]
+#define __pyx_n_u_figure __pyx_string_tab[19]
+#define __pyx_n_u_func __pyx_string_tab[20]
+#define __pyx_n_u_ha __pyx_string_tab[21]
+#define __pyx_n_u_i __pyx_string_tab[22]
+#define __pyx_n_u_img_nb __pyx_string_tab[23]
+#define __pyx_n_u_initializing __pyx_string_tab[24]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[25]
+#define __pyx_n_u_labels __pyx_string_tab[26]
+#define __pyx_n_u_ls_element __pyx_string_tab[27]
+#define __pyx_n_u_ls_file_in_dir __pyx_string_tab[28]
+#define __pyx_n_u_ls_of_file __pyx_string_tab[29]
+#define __pyx_n_u_main __pyx_string_tab[30]
+#define __pyx_n_u_matplotlib __pyx_string_tab[31]
+#define __pyx_n_u_matplotlib_pyplot __pyx_string_tab[32]
+#define __pyx_n_u_module __pyx_string_tab[33]
+#define __pyx_n_u_name __pyx_string_tab[34]
+#define __pyx_n_u_name_2 __pyx_string_tab[35]
+#define __pyx_n_u_path __pyx_string_tab[36]
+#define __pyx_n_u_pathlib __pyx_string_tab[37]
+#define __pyx_n_u_pie __pyx_string_tab[38]
+#define __pyx_n_u_plt __pyx_string_tab[39]
+#define __pyx_kp_u_png __pyx_string_tab[40]
+#define __pyx_n_u_pop __pyx_string_tab[41]
+#define __pyx_n_u_pyplot __pyx_string_tab[42]
+#define __pyx_n_u_qualname __pyx_string_tab[43]
+#define __pyx_n_u_right __pyx_string_tab[44]
+#define __pyx_n_u_rotation __pyx_string_tab[45]
+#define __pyx_n_u_savefig __pyx_string_tab[46]
+#define __pyx_n_u_set_name __pyx_string_tab[47]
+#define __pyx_n_u_show __pyx_string_tab[48]
+#define __pyx_n_u_spec __pyx_string_tab[49]
+#define __pyx_n_u_split __pyx_string_tab[50]
+#define __pyx_n_u_test __pyx_string_tab[51]
+#define __pyx_n_u_tight_layout __pyx_string_tab[52]
+#define __pyx_n_u_title __pyx_string_tab[53]
+#define __pyx_n_u_type_img __pyx_string_tab[54]
+#define __pyx_n_u_use __pyx_string_tab[55]
+#define __pyx_n_u_x __pyx_string_tab[56]
+#define __pyx_n_u_xlabel __pyx_string_tab[57]
+#define __pyx_n_u_xticks __pyx_string_tab[58]
+#define __pyx_n_u_y __pyx_string_tab[59]
+#define __pyx_n_u_ylabel __pyx_string_tab[60]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -2484,7 +2488,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #endif
   for (int i=0; i<2; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<59; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<61; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   Py_CLEAR(clear_module_state->__pyx_int_10);
   Py_CLEAR(clear_module_state->__pyx_int_45);
   return 0;
@@ -2509,7 +2513,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   #endif
   for (int i=0; i<2; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<59; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<61; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_10);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_45);
   return 0;
@@ -2517,7 +2521,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "distribution.pyx":5
+/* "distribution.pyx":8
  * from ls_file_in_dir import ls_of_file
  * 
  * def distribution(path):             # <<<<<<<<<<<<<<
@@ -2564,32 +2568,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_path,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 5, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 8, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 5, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 8, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "distribution", 0) < 0) __PYX_ERR(0, 5, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "distribution", 0) < 0) __PYX_ERR(0, 8, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("distribution", 1, 1, 1, i); __PYX_ERR(0, 5, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("distribution", 1, 1, 1, i); __PYX_ERR(0, 8, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 5, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 8, __pyx_L3_error)
     }
     __pyx_v_path = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("distribution", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 5, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("distribution", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 8, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2636,7 +2640,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("distribution", 0);
 
-  /* "distribution.pyx":6
+  /* "distribution.pyx":9
  * 
  * def distribution(path):
  *         ls_element = ls_of_file(path)             # <<<<<<<<<<<<<<
@@ -2644,7 +2648,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         x = []
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -2663,13 +2667,13 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_ls_element = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "distribution.pyx":7
+  /* "distribution.pyx":10
  * def distribution(path):
  *         ls_element = ls_of_file(path)
  *         base_path = Path(path)             # <<<<<<<<<<<<<<
@@ -2677,7 +2681,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         y = []
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -2696,48 +2700,48 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_base_path = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "distribution.pyx":8
+  /* "distribution.pyx":11
  *         ls_element = ls_of_file(path)
  *         base_path = Path(path)
  *         x = []             # <<<<<<<<<<<<<<
  *         y = []
  *         if not ls_element:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_x = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "distribution.pyx":9
+  /* "distribution.pyx":12
  *         base_path = Path(path)
  *         x = []
  *         y = []             # <<<<<<<<<<<<<<
  *         if not ls_element:
  *                 return
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_y = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "distribution.pyx":10
+  /* "distribution.pyx":13
  *         x = []
  *         y = []
  *         if not ls_element:             # <<<<<<<<<<<<<<
  *                 return
  *         for i in ls_element:
 */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_ls_element); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_ls_element); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 13, __pyx_L1_error)
   __pyx_t_6 = (!__pyx_t_5);
   if (__pyx_t_6) {
 
-    /* "distribution.pyx":11
+    /* "distribution.pyx":14
  *         y = []
  *         if not ls_element:
  *                 return             # <<<<<<<<<<<<<<
@@ -2748,7 +2752,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "distribution.pyx":10
+    /* "distribution.pyx":13
  *         x = []
  *         y = []
  *         if not ls_element:             # <<<<<<<<<<<<<<
@@ -2757,7 +2761,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
 */
   }
 
-  /* "distribution.pyx":12
+  /* "distribution.pyx":15
  *         if not ls_element:
  *                 return
  *         for i in ls_element:             # <<<<<<<<<<<<<<
@@ -2769,9 +2773,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
   } else {
-    __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_ls_element); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_ls_element); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_8 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 15, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_8)) {
@@ -2779,7 +2783,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 12, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 15, __pyx_L1_error)
           #endif
           if (__pyx_t_7 >= __pyx_temp) break;
         }
@@ -2789,7 +2793,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 12, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 15, __pyx_L1_error)
           #endif
           if (__pyx_t_7 >= __pyx_temp) break;
         }
@@ -2800,13 +2804,13 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
         #endif
         ++__pyx_t_7;
       }
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
     } else {
       __pyx_t_2 = __pyx_t_8(__pyx_t_1);
       if (unlikely(!__pyx_t_2)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 12, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 15, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -2816,7 +2820,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "distribution.pyx":13
+    /* "distribution.pyx":16
  *                 return
  *         for i in ls_element:
  *                 x.append(i.split('/')[-1])             # <<<<<<<<<<<<<<
@@ -2830,32 +2834,32 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
       PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_};
       __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_split, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, -1L, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, -1L, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_x, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_x, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "distribution.pyx":14
+    /* "distribution.pyx":17
  *         for i in ls_element:
  *                 x.append(i.split('/')[-1])
  *                 y.append(len(ls_element[i]))             # <<<<<<<<<<<<<<
  * 
  *         plt.bar(x, y)
 */
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_ls_element, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_ls_element, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_10 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyLong_FromSsize_t(__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_3 = PyLong_FromSsize_t(__pyx_t_10); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_y, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 14, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_y, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "distribution.pyx":12
+    /* "distribution.pyx":15
  *         if not ls_element:
  *                 return
  *         for i in ls_element:             # <<<<<<<<<<<<<<
@@ -2865,7 +2869,7 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":16
+  /* "distribution.pyx":19
  *                 y.append(len(ls_element[i]))
  * 
  *         plt.bar(x, y)             # <<<<<<<<<<<<<<
@@ -2873,9 +2877,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.xlabel("type_img")
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_bar); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_bar); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 1;
@@ -2895,12 +2899,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_4, (3-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":17
+  /* "distribution.pyx":20
  * 
  *         plt.bar(x, y)
  *         plt.title("distribution")             # <<<<<<<<<<<<<<
@@ -2908,9 +2912,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.ylabel("img_nb")
 */
   __pyx_t_11 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_title); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_title); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -2930,12 +2934,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":18
+  /* "distribution.pyx":21
  *         plt.bar(x, y)
  *         plt.title("distribution")
  *         plt.xlabel("type_img")             # <<<<<<<<<<<<<<
@@ -2943,9 +2947,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.xticks(rotation=45, ha="right") #ratation du texte pour  la lisebilit
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_xlabel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_xlabel); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_4 = 1;
@@ -2965,12 +2969,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":19
+  /* "distribution.pyx":22
  *         plt.title("distribution")
  *         plt.xlabel("type_img")
  *         plt.ylabel("img_nb")             # <<<<<<<<<<<<<<
@@ -2978,9 +2982,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.tight_layout() #gestion auto de la mise en page
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ylabel); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ylabel); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 1;
@@ -3000,12 +3004,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":20
+  /* "distribution.pyx":23
  *         plt.xlabel("type_img")
  *         plt.ylabel("img_nb")
  *         plt.xticks(rotation=45, ha="right") #ratation du texte pour  la lisebilit             # <<<<<<<<<<<<<<
@@ -3013,9 +3017,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.savefig("distribution.png")
 */
   __pyx_t_11 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_xticks); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_xticks); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -3032,20 +3036,20 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
   #endif
   {
     PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_11, NULL};
-    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_rotation, __pyx_mstate_global->__pyx_int_45, __pyx_t_3, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_ha, __pyx_mstate_global->__pyx_n_u_right, __pyx_t_3, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_rotation, __pyx_mstate_global->__pyx_int_45, __pyx_t_3, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_ha, __pyx_mstate_global->__pyx_n_u_right, __pyx_t_3, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
     __pyx_t_1 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_2, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":21
+  /* "distribution.pyx":24
  *         plt.ylabel("img_nb")
  *         plt.xticks(rotation=45, ha="right") #ratation du texte pour  la lisebilit
  *         plt.tight_layout() #gestion auto de la mise en page             # <<<<<<<<<<<<<<
@@ -3053,9 +3057,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.show()
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_tight_layout); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_tight_layout); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -3075,12 +3079,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":22
+  /* "distribution.pyx":25
  *         plt.xticks(rotation=45, ha="right") #ratation du texte pour  la lisebilit
  *         plt.tight_layout() #gestion auto de la mise en page
  *         plt.savefig("distribution.png")             # <<<<<<<<<<<<<<
@@ -3088,9 +3092,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.figure(figsize=(10, 10))
 */
   __pyx_t_11 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_savefig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_savefig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = 1;
@@ -3110,12 +3114,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":23
+  /* "distribution.pyx":26
  *         plt.tight_layout() #gestion auto de la mise en page
  *         plt.savefig("distribution.png")
  *         plt.show()             # <<<<<<<<<<<<<<
@@ -3123,9 +3127,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.pie(y, labels=x, autopct='%1.1f%%') # autopct montre les pourcentages
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_4 = 1;
@@ -3145,12 +3149,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":24
+  /* "distribution.pyx":27
  *         plt.savefig("distribution.png")
  *         plt.show()
  *         plt.figure(figsize=(10, 10))             # <<<<<<<<<<<<<<
@@ -3158,9 +3162,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.title(f"Rpartition des images par maladie\n({base_path.name})")
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_figure); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_figure); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -3177,19 +3181,19 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
   #endif
   {
     PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_2, NULL};
-    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_figsize, __pyx_mstate_global->__pyx_tuple[0], __pyx_t_3, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_figsize, __pyx_mstate_global->__pyx_tuple[0], __pyx_t_3, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
     __pyx_t_1 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_11, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":25
+  /* "distribution.pyx":28
  *         plt.show()
  *         plt.figure(figsize=(10, 10))
  *         plt.pie(y, labels=x, autopct='%1.1f%%') # autopct montre les pourcentages             # <<<<<<<<<<<<<<
@@ -3197,9 +3201,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.tight_layout()
 */
   __pyx_t_11 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_pie); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_pie); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -3216,20 +3220,20 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
   #endif
   {
     PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_11, __pyx_v_y};
-    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_labels, __pyx_v_x, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
-    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_autopct, __pyx_mstate_global->__pyx_kp_u_1_1f, __pyx_t_3, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_labels, __pyx_v_x, __pyx_t_3, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_autopct, __pyx_mstate_global->__pyx_kp_u_1_1f, __pyx_t_3, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
     __pyx_t_1 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_2, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_3);
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":26
+  /* "distribution.pyx":29
  *         plt.figure(figsize=(10, 10))
  *         plt.pie(y, labels=x, autopct='%1.1f%%') # autopct montre les pourcentages
  *         plt.title(f"Rpartition des images par maladie\n({base_path.name})")             # <<<<<<<<<<<<<<
@@ -3237,21 +3241,21 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.savefig(f'diagramme_circulaire_{base_path.name}.png')
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_title); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_title); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_base_path, __pyx_mstate_global->__pyx_n_u_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_base_path, __pyx_mstate_global->__pyx_n_u_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_12 = __Pyx_PyObject_FormatSimple(__pyx_t_3, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_FormatSimple(__pyx_t_3, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_13[0] = __pyx_mstate_global->__pyx_kp_u_Rpartition_des_images_par_maladi;
   __pyx_t_13[1] = __pyx_t_12;
   __pyx_t_13[2] = __pyx_mstate_global->__pyx_kp_u__2;
   __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_13, 3, 36 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_12) + 1, 255 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_12));
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   __pyx_t_4 = 1;
@@ -3272,12 +3276,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":27
+  /* "distribution.pyx":30
  *         plt.pie(y, labels=x, autopct='%1.1f%%') # autopct montre les pourcentages
  *         plt.title(f"Rpartition des images par maladie\n({base_path.name})")
  *         plt.tight_layout()             # <<<<<<<<<<<<<<
@@ -3285,9 +3289,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  *         plt.show()
 */
   __pyx_t_11 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_tight_layout); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_tight_layout); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = 1;
@@ -3307,12 +3311,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":28
+  /* "distribution.pyx":31
  *         plt.title(f"Rpartition des images par maladie\n({base_path.name})")
  *         plt.tight_layout()
  *         plt.savefig(f'diagramme_circulaire_{base_path.name}.png')             # <<<<<<<<<<<<<<
@@ -3320,21 +3324,21 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_savefig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_savefig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_base_path, __pyx_mstate_global->__pyx_n_u_name); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_base_path, __pyx_mstate_global->__pyx_n_u_name); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_FormatSimple(__pyx_t_11, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_FormatSimple(__pyx_t_11, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_13[0] = __pyx_mstate_global->__pyx_n_u_diagramme_circulaire;
   __pyx_t_13[1] = __pyx_t_12;
   __pyx_t_13[2] = __pyx_mstate_global->__pyx_kp_u_png;
   __pyx_t_11 = __Pyx_PyUnicode_Join(__pyx_t_13, 3, 21 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_12) + 4, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_12));
-  if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   __pyx_t_4 = 1;
@@ -3355,12 +3359,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":29
+  /* "distribution.pyx":32
  *         plt.tight_layout()
  *         plt.savefig(f'diagramme_circulaire_{base_path.name}.png')
  *         plt.show()             # <<<<<<<<<<<<<<
@@ -3368,9 +3372,9 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
  * 
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_plt); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_show); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_4 = 1;
@@ -3390,12 +3394,12 @@ static PyObject *__pyx_pf_12distribution_distribution(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distribution.pyx":5
+  /* "distribution.pyx":8
  * from ls_file_in_dir import ls_of_file
  * 
  * def distribution(path):             # <<<<<<<<<<<<<<
@@ -3684,6 +3688,9 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_distribution(PyObject *__pyx_pyini
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  size_t __pyx_t_6;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3791,66 +3798,102 @@ __Pyx_RefNannySetupContext("PyInit_distribution", 0);
   /*--- Execution code ---*/
 
   /* "distribution.pyx":1
- * import matplotlib.pyplot as plt             # <<<<<<<<<<<<<<
- * from pathlib import Path
- * from ls_file_in_dir import ls_of_file
+ * import matplotlib             # <<<<<<<<<<<<<<
+ * matplotlib.use("Qt5Agg")
+ * import matplotlib.pyplot as plt
 */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_matplotlib_pyplot, __pyx_mstate_global->__pyx_tuple[1]); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_matplotlib, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_plt, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_matplotlib, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "distribution.pyx":2
+ * import matplotlib
+ * matplotlib.use("Qt5Agg")             # <<<<<<<<<<<<<<
  * import matplotlib.pyplot as plt
+ * 
+*/
+  __pyx_t_3 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_matplotlib); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_use); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_6 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Qt5Agg};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "distribution.pyx":3
+ * import matplotlib
+ * matplotlib.use("Qt5Agg")
+ * import matplotlib.pyplot as plt             # <<<<<<<<<<<<<<
+ * 
+ * from pathlib import Path
+*/
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_matplotlib_pyplot, __pyx_mstate_global->__pyx_tuple[1]); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_plt, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "distribution.pyx":5
+ * import matplotlib.pyplot as plt
+ * 
  * from pathlib import Path             # <<<<<<<<<<<<<<
  * from ls_file_in_dir import ls_of_file
  * 
 */
-  __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_pathlib, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_pathlib, __pyx_t_2, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Path, __pyx_t_2) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Path, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "distribution.pyx":3
- * import matplotlib.pyplot as plt
+  /* "distribution.pyx":6
+ * 
  * from pathlib import Path
  * from ls_file_in_dir import ls_of_file             # <<<<<<<<<<<<<<
  * 
  * def distribution(path):
 */
-  __pyx_t_3 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_ls_file_in_dir, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_ls_file_in_dir, __pyx_t_5, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ls_of_file, __pyx_t_3) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ls_of_file); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ls_of_file, __pyx_t_5) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "distribution.pyx":5
+  /* "distribution.pyx":8
  * from ls_file_in_dir import ls_of_file
  * 
  * def distribution(path):             # <<<<<<<<<<<<<<
  *         ls_element = ls_of_file(path)
  *         base_path = Path(path)
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12distribution_1distribution, 0, __pyx_mstate_global->__pyx_n_u_distribution, NULL, __pyx_mstate_global->__pyx_n_u_distribution, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12distribution_1distribution, 0, __pyx_mstate_global->__pyx_n_u_distribution, NULL, __pyx_mstate_global->__pyx_n_u_distribution, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_distribution, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_distribution, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "distribution.pyx":1
- * import matplotlib.pyplot as plt             # <<<<<<<<<<<<<<
- * from pathlib import Path
- * from ls_file_in_dir import ls_of_file
+ * import matplotlib             # <<<<<<<<<<<<<<
+ * matplotlib.use("Qt5Agg")
+ * import matplotlib.pyplot as plt
 */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3863,6 +3906,8 @@ __Pyx_RefNannySetupContext("PyInit_distribution", 0);
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
       __Pyx_AddTraceback("init distribution", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -3919,6 +3964,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_, sizeof(__pyx_k_), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_ */
   {__pyx_k_1_1f, sizeof(__pyx_k_1_1f), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_1_1f */
   {__pyx_k_Path, sizeof(__pyx_k_Path), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Path */
+  {__pyx_k_Qt5Agg, sizeof(__pyx_k_Qt5Agg), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Qt5Agg */
   {__pyx_k_Rpartition_des_images_par_maladi, sizeof(__pyx_k_Rpartition_des_images_par_maladi), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Rpartition_des_images_par_maladi */
   {__pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__2 */
   {__pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__3 */
@@ -3970,6 +4016,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_tight_layout, sizeof(__pyx_k_tight_layout), 0, 1, 1}, /* PyObject cname: __pyx_n_u_tight_layout */
   {__pyx_k_title, sizeof(__pyx_k_title), 0, 1, 1}, /* PyObject cname: __pyx_n_u_title */
   {__pyx_k_type_img, sizeof(__pyx_k_type_img), 0, 1, 1}, /* PyObject cname: __pyx_n_u_type_img */
+  {__pyx_k_use, sizeof(__pyx_k_use), 0, 1, 1}, /* PyObject cname: __pyx_n_u_use */
   {__pyx_k_x, sizeof(__pyx_k_x), 0, 1, 1}, /* PyObject cname: __pyx_n_u_x */
   {__pyx_k_xlabel, sizeof(__pyx_k_xlabel), 0, 1, 1}, /* PyObject cname: __pyx_n_u_xlabel */
   {__pyx_k_xticks, sizeof(__pyx_k_xticks), 0, 1, 1}, /* PyObject cname: __pyx_n_u_xticks */
@@ -3993,23 +4040,25 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "distribution.pyx":24
+  /* "distribution.pyx":27
  *         plt.savefig("distribution.png")
  *         plt.show()
  *         plt.figure(figsize=(10, 10))             # <<<<<<<<<<<<<<
  *         plt.pie(y, labels=x, autopct='%1.1f%%') # autopct montre les pourcentages
  *         plt.title(f"Rpartition des images par maladie\n({base_path.name})")
 */
-  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_10, __pyx_mstate_global->__pyx_int_10); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_10, __pyx_mstate_global->__pyx_int_10); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
 
-  /* "distribution.pyx":1
+  /* "distribution.pyx":3
+ * import matplotlib
+ * matplotlib.use("Qt5Agg")
  * import matplotlib.pyplot as plt             # <<<<<<<<<<<<<<
+ * 
  * from pathlib import Path
- * from ls_file_in_dir import ls_of_file
 */
-  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_n_u_matplotlib, __pyx_mstate_global->__pyx_n_u_pyplot); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_n_u_matplotlib, __pyx_mstate_global->__pyx_n_u_pyplot); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_RefNannyFinishContext();
@@ -4039,7 +4088,7 @@ static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
             unsigned int num_kwonly_args : 1;
             unsigned int nlocals : 3;
             unsigned int flags : 10;
-            unsigned int first_line : 3;
+            unsigned int first_line : 4;
             unsigned int line_table_length : 13;
         } __Pyx_PyCode_New_function_description;
 /* NewCodeObj.proto */
@@ -4057,7 +4106,7 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 5, 235};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 8, 235};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_path, __pyx_mstate->__pyx_n_u_ls_element, __pyx_mstate->__pyx_n_u_base_path, __pyx_mstate->__pyx_n_u_x, __pyx_mstate->__pyx_n_u_y, __pyx_mstate->__pyx_n_u_i};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_distribution_pyx, __pyx_mstate->__pyx_n_u_distribution, __pyx_k_Zq_D_A_A_4q_E_Rq_AZq_4q_1_6_7_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }

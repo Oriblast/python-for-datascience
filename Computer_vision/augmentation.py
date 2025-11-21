@@ -70,14 +70,15 @@ def main():
                         f"augmented_directory/{root.split('/')[-1]}_{j}.jpg",
                         imgs[i][j]
                     )
-    show_augmented(imgs, image)
+    if os.path.isfile(sys.argv[1]):
+        show_augmented(imgs, image)
     if os.path.isdir(sys.argv[1]):
         ls_dir = ls_of_file(root)
         root = sys.argv[1]
         max_nb_file = 0
         ad = "augmented_directory"
         for i in ls_dir:
-            if os.path.isdir(i)
+            if os.path.isdir(i):
                 ad = "augmented_directory/" + i.split('/')[-1]
                 if max_nb_file < len(ls_dir[i]):
                     max_nb_file = len(ls_dir[i])

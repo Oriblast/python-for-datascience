@@ -1,4 +1,7 @@
+import matplotlib
+matplotlib.use("Qt5Agg")
 import matplotlib.pyplot as plt
+ 
 from pathlib import Path
 from ls_file_in_dir import ls_of_file
 
